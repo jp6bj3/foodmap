@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="font.css">
 
     <style>
         .main-header {
@@ -218,6 +219,13 @@
         }
 
         /* .waterfall */
+
+        .section-waterfall-title {
+            text-align: center;
+            font-size: 24px;
+            padding-top: 40px;
+        }
+
         body {
             margin: 0;
             padding: 10px;
@@ -258,6 +266,20 @@
             max-width: 900px;
             padding-top: 40px;
         }
+
+        .ww {
+            max-width: 1000px;
+        }
+
+        .w {
+            padding-top: 20px;
+            margin-left: 180px;
+        }
+
+        .w img {
+            width: 80%;
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -266,7 +288,7 @@
     <header class="main-header">
         <div class="bv"><img src="foodmap/banner.jpg"></div>
         <div class="logo">
-            <a href="#">
+            <a href="https://jp6bj3.github.io/foodmap/Mockup/index2.html">
                 <img src="foodmap/logo.png">
         </div></a>
         <div class="phone"><a href="#">下載APP</a></div>
@@ -289,10 +311,10 @@
             <div class="container container-eat">
                 <div class="row row-cols-1 row-cols-md-1">
                     <div class="col eat-col">
-                        <h2>附近的大家吃了什麼?</h2>
+                        <h2>精選動態</h2>
                         <div class="eat-txt">
-                            <p>查看身邊有使用此app的人都吃些甚麼，或查看朋友的動態。</p>
-                            <p>更多資訊 </p>
+                            <p>台北市, 大安區附近</p>
+                            <p>2455瀏覽 | 231人說讚 </p>
                         </div>
                     </div>
                 </div>
@@ -324,6 +346,9 @@
 
             </div>
         </div>
+        <div class="section-waterfall-title">
+            <h2>附近的大家都吃什麼?</h2>
+        </div>
         <div class="section-waterfall waterfall">
             <div class="item"><img src="https://picsum.photos/200/300/?random=10"></div>
             <div class="item"><img src="https://picsum.photos/200/350/?random=12"></div>
@@ -333,6 +358,9 @@
             <div class="item"><img src="https://picsum.photos/200/300/?random=18"></div>
             <div class="item"><img src="https://picsum.photos/200/300/?random=19"></div>
             <div class="item"><img src="https://picsum.photos/200/300/?random=29"></div>
+        </div>
+        <div class="ww">
+            <img class="w" src="foodmap/w.png" alt="">
         </div>
     </main>
 </body>
