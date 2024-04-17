@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* .section-nav-list {} */
+
+        .head-banner img {
+            width: 100%;
+            /* background-color: rgb(0, 0, 0, .5); */
+        }
+
+        .search-box {
+            background-color: #888888;
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .section-main {
+            max-width: 1400px;
+            min-width: 429px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .list-sort {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card-sort {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            border-radius: 10px;
+            border: #888888 1px solid;
+        }
+
+        .card-sort-post {
+            padding: 5px;
+            position: relative;
+
+        }
+
+        .card-sort img,
+        .foodreview-img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-sort span {
+            position: absolute;
+            background-color: #fa0;
+        }
+
+        .foodreview-card {
+            display: flex;
+            flex-direction: column;
+            width: 33.66666%;
+            border-radius: 10px;
+            border: #888888 1px solid;
+        }
+
+        .list-foodreview {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .user {
+            border-radius: 25%;
+            background-image: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <nav class="section-nav-list">
+        <div class="nav-list">
+            <p>下載app</p>
+            <p>添加餐廳</p>
+            <p>商家</p>
+            <p>會員登入</p>
+            <p>註冊</p>
+        </div>
+    </nav> -->
+    <div head>
+        <div class="section-head">
+            <div class="head-banner">
+                <img src="foodmap/banner.jpg" alt="">
+                <div class="banner-logo"></div>
+                <div class="banner-tour"></div>
+            </div>
+        </div>
+    </div>
+    <div class="section-main">
+        <div class="main-search">
+            <div class="search-box">
+                <p>輸入資料</p>
+            </div>
+        </div>
+        <div class="list-sort">
+            <div class="card-sort">
+                <img src="foodmap/restaurant.jpg" alt="">
+                <div class="card-sort-post">
+                    <span>高級餐廳</span>
+                    <p>查看附近的高級餐廳</p>
+                </div>
+            </div>
+            <div class="card-sort">
+                <img src="foodmap/card-sort-pizza.jpg" alt="">
+                <div class="card-sort-post">
+                    <span>披薩</span>
+                    <p>查看附近的美式披薩店</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-foodreview">
+        <div class="foodreview-title">
+            <!-- icon -->
+            <h2>精選食評</h2>
+        </div>
+        <div class="list-foodreview">
+            <div class="foodreview-card">
+                <img class="foodreview-img" src="foodmap/foodrev-fish.jpg" alt="">
+                <div class="foodreview-user">
+                    <img class="user" src="https://fakeimg.pl/50x50/200">" alt="">
+                    <p>username</p>
+                </div>
+                <div class="foodreview-post">
+                    <p>fffff</p>
+                </div>
+                <div class="foodreview-Comment">
+                    <p>aaa</p>
+                    <p>bbbb</p>
+                </div>
+                <div class="foodreview-store">
+                    <div class="store-img">
+                        <img class="user" src="foodmap/" alt="">
+                    </div>
+                    <div class="store-user">
+                        <p>2222</p>
+                        <p>333333</p>
+                    </div>
+                </div>
+            </div>
+            <div class="foodreview-card">
+                <img class="foodreview-img" src="foodmap/" alt="">
+                <div class="foodreview-user">
+                    <img class="user" src="foodmap/" alt="">
+                    <p>username</p>
+                </div>
+                <div class="foodreview-post">
+                    <p>fffff</p>
+                </div>
+                <div class="foodreview-Comment">
+                    <p>aaa</p>
+                    <p>bbbb</p>
+                </div>
+                <div class="foodreview-store">
+                    <div class="store-img">
+                        <img class="user" src="foodmap/" alt="">
+                    </div>
+                    <div class="store-user">
+                        <p>2222</p>
+                        <p>333333</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

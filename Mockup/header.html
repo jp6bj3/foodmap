@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="grid.css">
+
+    <style>
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            position: relative;
+        }
+
+        #switch {
+            display: none;
+        }
+
+        .main-header .logo {
+            width: 100%;
+            z-index: 2;
+            padding: 5px 0;
+        }
+
+        @media screen and (min-width:768px) {
+            .main-header .logo {
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                padding: 10vh 0 0 0;
+            }
+        }
+
+        .main-header .phone {
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            z-index: 5;
+        }
+
+        .main-header .phone a {
+            text-decoration: none;
+            color: #ddd;
+        }
+
+        @media screen and (max-width:768px) {
+            .main-header .phone {
+                display: none;
+            }
+        }
+
+        .main-header .hb {
+            width: 60px;
+            height: 50px;
+            /* background-color: #4c4c4c88; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            z-index: 2;
+            padding: 15px 5px;
+        }
+
+        @media screen and (min-width:768px) {
+            .main-header .hb {
+                display: none;
+            }
+        }
+
+        .main-header .hb span {
+            width: 80%;
+            height: 3px;
+            background-color: #fff;
+        }
+
+        @media screen and (max-width:768px) {
+            .main-header .main-nav {
+                display: none;
+                position: absolute;
+                background-color: rgb(0, 0, 0);
+                top: 100%;
+                /* right: 0; */
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width:768px) {
+            #switch:checked~.main-header .main-nav {
+                display: flex;
+            }
+
+            .main-header .main-nav {
+                display: flex;
+                position: relative;
+                top: auto;
+                width: auto;
+                background-color: transparent;
+                right: 5%;
+            }
+        }
+
+        .main-header .main-nav a {
+            display: block;
+            /* 佔滿整排 */
+            padding: 10px;
+            width: 70px;
+            text-align: center;
+            text-decoration: none;
+            /* 底線消失 */
+            color: aliceblue;
+        }
+
+        @media screen and (max-width:768px) {
+            .main-header .main-nav a+a {
+                border-top: 1px solid #fff;
+                /* A後面的A 加上TOP線 */
+            }
+        }
+
+        #switch:checked~.main-header .main-nav {
+            display: block;
+            z-index: 2;
+        }
+
+        /* 底圖 */
+
+        .bv {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+
+        @media screen and (max-width:768px) {
+            .bv {
+                height: 100%;
+                overflow: hidden;
+            }
+        }
+
+        @media screen and (min-width:768px) {
+            .bv {
+                height: 330%;
+                overflow: hidden;
+            }
+        }
+
+        .bv img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="switch">
+    <header class="main-header">
+        <div class="bv"><img src="foodmap/banner.jpg"></div>
+        <div class="logo">
+            <a href="#">
+                <img src="foodmap/logo.png">
+        </div></a>
+        <div class="phone"><a href="#">下載APP</a></div>
+        <label class="hb" for="switch">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="main-nav">
+            <a href="#">添加餐廳</a>
+            <a href="#">商家</a>
+            <a href="#">登入</a>
+            <a href="#">註冊</a>
+        </div>
+
+    </header>
+    <main>
+
+
+        </div>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="grid.css">
+    <style>
+        .card img {
+            width: 100%;
+            position: relative;
+        }
+
+        .card-foodsort {
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            border: #888888 1px solid;
+        }
+
+        .card-foodsort .tab {
+            position: absolute;
+            background: #000;
+        }
+
+        .card-foodreview {
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            border: #888888 1px solid;
+        }
+
+        .container-foodreview {
+            flex-direction: row;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section section-foodsort">
+        <div class="container container-foodsort">
+            <div class="row row-cols-2 row-cols-md-3">
+                <div class="col">
+                    <div class="card card-foodsort">
+                        <a href="#"><img src="https://picsum.photos/300/200/?random=10">
+                            <div class="tab">title</div>
+                            <div class="txt">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quis
+                                    voluptatibus a!
+                                </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-foodsort">
+                    <div class="pic"><img src="https://picsum.photos/300/200/?random=10"></div>
+                    <div class="tab">title</div>
+                    <div class="txt">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quis voluptatibus a!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-foodsort">
+                    <div class="pic"><img src="https://picsum.photos/300/200/?random=10"></div>
+                    <div class="tab">title</div>
+                    <div class="txt">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quis voluptatibus a!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="section-foodreview">
+        <div class="container container-foodreview">
+            <div class="row row-cols-3">
+                <div class="col">
+                    <div class="card card-foodreview">
+                        <div class="pic"><img src="https://picsum.photos/300/200/?random=10"></div>
+                        <div class="txt">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quis voluptatibus a!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-foodreview">
+                        <div class="pic"><img src="https://picsum.photos/300/200/?random=10"></div>
+                        <div class="txt">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quis
+                                voluptatibus a!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-foodreview">
+                        <div class="pic"><img src="https://picsum.photos/300/200/?random=10"></div>
+                        <div class="txt">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quis
+                                voluptatibus a!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

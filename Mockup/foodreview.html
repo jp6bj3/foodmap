@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="font.css">
+
+    <style>
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            position: relative;
+        }
+
+        #switch {
+            display: none;
+        }
+
+        .main-header .logo {
+            width: 100%;
+            z-index: 2;
+            padding: 5px 0;
+        }
+
+        @media screen and (min-width:768px) {
+            .main-header .logo {
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                padding: 10vh 0 0 0;
+            }
+        }
+
+        .main-header .phone {
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            z-index: 5;
+        }
+
+        .main-header .phone a {
+            text-decoration: none;
+            color: #ddd;
+        }
+
+        @media screen and (max-width:768px) {
+            .main-header .phone {
+                display: none;
+            }
+        }
+
+        .main-header .hb {
+            width: 60px;
+            height: 50px;
+            /* background-color: #4c4c4c88; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            z-index: 2;
+            padding: 15px 5px;
+        }
+
+        @media screen and (min-width:768px) {
+            .main-header .hb {
+                display: none;
+            }
+        }
+
+        .main-header .hb span {
+            width: 80%;
+            height: 3px;
+            background-color: #fff;
+        }
+
+        @media screen and (max-width:768px) {
+            .main-header .main-nav {
+                display: none;
+                position: absolute;
+                background-color: rgb(0, 0, 0);
+                top: 100%;
+                /* right: 0; */
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width:768px) {
+            #switch:checked~.main-header .main-nav {
+                display: flex;
+            }
+
+            .main-header .main-nav {
+                display: flex;
+                position: relative;
+                top: auto;
+                width: auto;
+                background-color: transparent;
+                right: 5%;
+            }
+        }
+
+        .main-header .main-nav a {
+            display: block;
+            /* 佔滿整排 */
+            padding: 10px;
+            width: 70px;
+            text-align: center;
+            text-decoration: none;
+            /* 底線消失 */
+            color: aliceblue;
+        }
+
+        @media screen and (max-width:768px) {
+            .main-header .main-nav a+a {
+                border-top: 1px solid #fff;
+                /* A後面的A 加上TOP線 */
+            }
+        }
+
+        #switch:checked~.main-header .main-nav {
+            display: block;
+            z-index: 2;
+        }
+
+        /* 底圖 */
+
+        .bv {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+
+        @media screen and (max-width:768px) {
+            .bv {
+                height: 100%;
+                overflow: hidden;
+            }
+        }
+
+        @media screen and (min-width:768px) {
+            .bv {
+                height: 330%;
+                overflow: hidden;
+            }
+        }
+
+        .bv img {
+            width: 100%;
+        }
+
+        main {
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+
+        @media screen and (min-width:768px) {
+            main {
+                padding: 19vh 0 0 0;
+                background-color: rgb(221, 221, 221);
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            main {
+                padding: 0;
+            }
+        }
+
+        .section-main {
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 80%;
+            aspect-ratio: 16/9;
+            background-color: rgb(255, 255, 255);
+        }
+
+        @media screen and (max-width:768px) {
+            .section-main {
+                max-width: none;
+                padding: none;
+                margin: 0 auto;
+            }
+        }
+
+        .container-main h2 {
+            font-size: 32px;
+            padding-top: 10px;
+        }
+
+        .container-main p {
+            font-size: 16;
+        }
+
+        .main-content {
+            padding: 20px 100px;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+
+        @media screen and (max-width:768px) {
+            .main-content {
+                padding: 20px 0;
+            }
+        }
+
+        .content-title {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contrnt-flow {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .content-link {
+            flex-direction: column;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .main-content .content-link img {
+            border-radius: 50px;
+        }
+
+        .content-text {
+            font-size: 20px;
+            line-height: 40px;
+        }
+
+        .content-text-img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .content-text-img img {
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            bottom: -10px;
+        }
+
+        .section-restaurant {
+            border: #ddd 1px solid;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .section-restaurant-img {
+            width: 100px;
+            height: 80px;
+        }
+
+        .content-restaurant {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .restaurant-btn {
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .restaurant-btn a {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .restaurant-txt {
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            text-align: end;
+        }
+
+        .restaurant-txt a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="switch">
+    <header class="main-header">
+        <div class="bv"><img src="foodmap/banner.jpg"></div>
+        <div class="logo">
+            <a href="#">
+                <img src="foodmap/logo.png">
+        </div></a>
+        <div class="phone"><a href="#">下載APP</a></div>
+        <label class="hb" for="switch">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="main-nav">
+            <a href="#">添加餐廳</a>
+            <a href="#">商家</a>
+            <a href="#">登入</a>
+            <a href="#">註冊</a>
+        </div>
+
+    </header>
+    <main>
+
+        <div class="section-main">
+            <div class="container container-main">
+                <div class="main-content">
+                    <div class="content-title">
+                        <h2>台北中山咖啡廳10間推薦！</h2>
+                        <p>2023中山咖啡廳推薦最新清單！IG洗版不限時復古咖啡廳</p>
+                        <p>A小姐</p>
+                        <div class="contrnt-flow">
+                            <p>PUBLISHED: 2023/09/01</p>
+                            <span>2455瀏覽 | 231人說讚</span>
+                        </div>
+                        <div class="content-link">
+                            <img src="https://fakeimg.pl/30x30/200">
+                            <img src="https://fakeimg.pl/30x30/200">
+                            <img src="https://fakeimg.pl/30x30/200">
+                        </div>
+                    </div>
+                    <div class="content-text">
+                        <div class="content-text-img"><img src="foodmap/01.jpg" alt=""></div>
+                        <p>澄光咖啡坐落於城市裡的一隅神秘角落，暖日深夜咖啡廳，低調的店門讓人想一窺門後的面貌。<br>
+                            來到這裡用餐仿佛回到溫馨的老家，簡單的布丁、巴斯克讓人流連忘返，
+                            每天供應的甜食品項都不同，可以品嘗到精心安排的餐點組合。
+                            無拘束的自在氛圍值得一訪再訪。
+                        </p>
+                        <p>中山區Top10 咖啡廳
+                        </p>
+                        <div class="section-restaurant">
+                            <div class="content-restaurant">
+                                <img class="section-restaurant-img" src="foodmap/01.jpg">
+                                <div class="restaurant-btn">
+                                    <a href="#">
+                                        <h4>澄光咖啡廳</h4>
+                                    </a>
+                                    <p>大安區, 營業時間：12:00-19:00</p>
+                                </div>
+                            </div>
+                            <div class="restaurant-txt"><a href="#"><span>線上預約
+                                    </span></a>
+
+                                <p>2455瀏覽 | 231人說讚</p>
+                            </div>
+                        </div>
+                        <p>以韓系廢墟裝潢搭配俏皮的塗鴉風，瞬間成為IG熱門打卡點，彩色傢俱更是童趣感十足，
+                            擺上布丁和戚風蛋糕超級可愛，絕對是到中山商圈必訪的咖啡廳！
+                        </p>
+                        <div class="content-text-img"><img src="foodmap/02.jpg" alt=""></div>
+                        <p>以韓系廢墟裝潢搭配俏皮的塗鴉風，瞬間成為IG熱門打卡，<br>
+                            擺上布丁和戚風蛋糕超級可愛，絕對是到中山商圈必訪的咖啡廳！
+                        </p>
+                        <div class="section-restaurant">
+                            <div class="content-restaurant">
+                                <img class="section-restaurant-img" src="foodmap/02.jpg">
+                                <div class="restaurant-btn">
+                                    <a href="#">
+                                        <h4>澄光咖啡廳</h4>
+                                    </a>
+                                    <p>大安區, 營業時間：12:00-19:00</p>
+                                </div>
+                            </div>
+                            <div class="restaurant-txt"><a href="#"><span>線上預約
+                                    </span></a>
+
+                                <p>2455瀏覽 | 231人說讚</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foodmap</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="font.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+        h2,
+        p {
+            font-family: 'Inter';
+            line-height: 30px;
+        }
+
+        h2 {
+            line-height: 40px;
+        }
+
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            position: relative;
+        }
+
+        #switch {
+            display: none;
+        }
+
+        .main-header .logo {
+            width: 100%;
+            z-index: 2;
+            padding: 5px 0;
+        }
+
+        @media screen and (min-width:768px) {
+            .main-header .logo {
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                padding: 10vh 0 0 0;
+            }
+        }
+
+        .main-header .phone {
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            z-index: 5;
+        }
+
+        .main-header .phone a {
+            text-decoration: none;
+            color: #ddd;
+        }
+
+        @media screen and (max-width:768px) {
+            .main-header .phone {
+                display: none;
+            }
+        }
+
+        .main-header .hb {
+            width: 60px;
+            height: 50px;
+            /* background-color: #4c4c4c88; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            z-index: 2;
+            padding: 15px 5px;
+        }
+
+        @media screen and (min-width:768px) {
+            .main-header .hb {
+                display: none;
+            }
+        }
+
+        .main-header .hb span {
+            width: 80%;
+            height: 3px;
+            background-color: #fff;
+        }
+
+        @media screen and (max-width:768px) {
+            .main-header .main-nav {
+                display: none;
+                position: absolute;
+                background-color: rgb(0, 0, 0);
+                top: 100%;
+                /* right: 0; */
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width:768px) {
+            #switch:checked~.main-header .main-nav {
+                display: flex;
+            }
+
+            .main-header .main-nav {
+                display: flex;
+                position: relative;
+                top: auto;
+                width: auto;
+                background-color: transparent;
+                right: 5%;
+            }
+        }
+
+        .main-header .main-nav a {
+            display: block;
+            /* 佔滿整排 */
+            padding: 10px;
+            width: 70px;
+            text-align: center;
+            text-decoration: none;
+            /* 底線消失 */
+            color: aliceblue;
+        }
+
+        @media screen and (max-width:768px) {
+            .main-header .main-nav a+a {
+                border-top: 1px solid #fff;
+                /* A後面的A 加上TOP線 */
+            }
+        }
+
+        #switch:checked~.main-header .main-nav {
+            display: block;
+            z-index: 2;
+        }
+
+        /* 底圖 */
+
+        .bv {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+
+        @media screen and (max-width:768px) {
+            .bv {
+                height: 100%;
+                overflow: hidden;
+            }
+        }
+
+        @media screen and (min-width:768px) {
+            .bv {
+                height: 330%;
+                overflow: hidden;
+            }
+        }
+
+        .bv img {
+            width: 100%;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        @media screen and (min-width:768px) {
+            main {
+                padding: 12% 0 0 0;
+            }
+        }
+
+        /* APP */
+        .section-downloadapp .pic img {
+            width: 100%;
+        }
+
+        .section-downloadappA .pic img {
+            width: 100%;
+        }
+
+        .section-downloadappB .pic img {
+            width: 80%;
+        }
+
+        /* .downloadapp {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        } */
+
+        .card-app {
+            padding: 5vh 5vw 0 0;
+        }
+
+        @media screen and (min-width:768px) {
+            .card-app {
+                padding: 0 5vw 0 0;
+            }
+        }
+
+        .card-downloadapp {
+            padding: 5vh 0 0 5vw;
+        }
+
+        @media screen and (min-width:768px) {
+            .card-downloadapp {
+                padding: 20vh 0 0 8vw;
+            }
+        }
+
+        .card-downloadapp h2 {
+            font-size: 24px;
+        }
+
+        .card-downloadapp p {
+            font-size: 16px;
+            padding: 20px 0;
+        }
+
+        /* app2 */
+        .section-downloadappA {
+            padding: 10vh 0 20vh 0;
+        }
+
+        .card-downloadappA {
+            padding: 5vh 5vw 0 0;
+        }
+
+        @media screen and (min-width:768px) {
+            .card-downloadappA {
+                padding: 20vh 5vw 0 2vw;
+            }
+        }
+
+        .card-downloadappA h2 {
+            font-size: 24px;
+        }
+
+        .card-downloadappA p {
+            font-size: 16px;
+            padding: 20px 0;
+        }
+
+        .card-appgroup {
+            padding: 5vh 0 0 5vw;
+        }
+
+        @media screen and (min-width:768px) {
+            .card-appgroup {
+                padding: 5vh 0 0 8vw;
+            }
+        }
+
+        /* app3 */
+
+        .section-downloadappB {
+            background-color: #FFF5EC;
+            margin: -5%;
+            padding: 10vh 0;
+        }
+
+        .section-downloadappB .card-appb {
+            position: relative;
+        }
+
+        .picb {
+            position: absolute;
+            left: 60px;
+            top: 60px;
+            width: 30vw;
+        }
+
+        .picb img {
+            width: 100%;
+        }
+
+        /* app4 */
+        .section-downloadappC {
+            padding: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media screen and (max-width:768px) {
+            .section-downloadappC {
+                padding: 10vh;
+            }
+        }
+
+        .section-downloadappC h2 {
+            font-size: 24px;
+            text-align: center;
+            padding-bottom: 20px;
+            line-height: 40px;
+        }
+
+        .section-downloadappC img {
+            width: 100%;
+        }
+
+        /* footer */
+        .section-downloadappfooter {
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="switch">
+    <header class="main-header">
+        <div class="bv"><img src="foodmap/banner.jpg"></div>
+        <div class="logo">
+            <a href="#">
+                <img src="foodmap/logo.png">
+        </div></a>
+        <div class="phone"><a href="#">下載APP</a></div>
+        <label class="hb" for="switch">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="main-nav">
+            <a href="#">添加餐廳</a>
+            <a href="#">商家</a>
+            <a href="#">登入</a>
+            <a href="#">註冊</a>
+        </div>
+    </header>
+    <main>
+        <div class="section section-downloadapp">
+            <div class="container container-downloadapp">
+                <div class="row row-cols-2 row-cols-md-2">
+                    <div class="col">
+                        <div class="card card-downloadapp">
+                            <div class="txt">
+                                <h2>取得 Food Map 的應用程式</h2>
+                                <p>使用不同商店下載App，<br>
+                                    取得更多最新消息
+                                </p>
+                            </div>
+                            <a class="btn" href="#">
+                                <img src="https://fakeimg.pl/80x30/200">
+                                <img src="https://fakeimg.pl/80x30/200">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-app"><a href="#">
+                                <div class="pic"><img src="foodmap/appimg.png"></div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section section-downloadappA">
+            <div class="container container-downloadappA">
+                <div class="row row-cols-2 row-cols-md-2">
+
+                    <div class="col">
+                        <div class="card card-appgroup"><a href="#">
+                                <div class="pic"><img src="foodmap/app2.png"></div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <div class="card card-downloadappA">
+                            <div class="txt">
+                                <h2>告別每個沒有想法的夜晚</h2>
+                                <p>美食文章超多，再也不迷茫!<br>
+                                    尋找美食的最佳神器，探索台灣的各種好料，
+                                </p>
+                            </div>
+                            <a class="btn" href="#">
+                                <img src="https://fakeimg.pl/80x30/200">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section section-downloadappB">
+            <div class="container container-downloadappB">
+                <div class="row row-cols-2 row-cols-md-2">
+                    <div class="col">
+                        <div class="card card-downloadapp">
+                            <div class="txt">
+                                <h2>加入社群 記錄生活</h2>
+                                <p>一手掌握精選文章與熱門餐廳，<br>
+                                    體驗生活、分享生活。
+                                </p>
+                            </div>
+                            <a class="btn" href="#">
+                                <img src="https://fakeimg.pl/80x30/200">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-appb"><a href="#">
+                                <div class="pic"><img src="foodmap/appb.png"></div>
+                                <div class="picb"><img src="foodmap/appb2.png"></div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section section-downloadappC">
+            <h2>Food Map<br>
+                開啟你的美食之旅</h2>
+            <img src="foodmap/appc.png" alt="">
+        </div>
+        <div class="section section-downloadappQA">
+            <h2>Food Map 常見問題</h2>
+            .
+            <p>Food Map 是否提供外帶服務？</p>
+            <p>Food Map 是否提供外送服務？</p>
+            <p>Food Map 的評等如何？</p>
+            <p>Food Map 使用者評價如何計分?</p>
+        </div>
+
+    </main>
+    <footer>
+        <div class="section section-downloadappfooter">
+            <p>中文(台灣) © 2024 from 111</p>
+        </div>
+    </footer>
+</body>
+
+</html>
