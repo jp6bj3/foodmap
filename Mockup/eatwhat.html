@@ -154,47 +154,109 @@
             width: 100%;
         }
 
-        .section-foodsort {
-            padding-top: 20vh;
-            display: flex;
-            flex-direction: row;
-            padding-left: 9vw;
-
-        }
-
-        .section-foodsort p {
-            padding: 20px;
+        /* eat */
+        .section-eat {
+            padding-top: 18vh;
         }
 
         @media screen and (max-width:768px) {
-            .section-foodsort {
-                padding-top: 20px;
+            .section-eat {
+                padding-top: 0px;
             }
         }
 
-        .section-map {
-            max-width: 1000px;
-            margin: auto;
 
+        .container-eat .card-eat-e {
+            width: 100%;
         }
 
-        .card-map {
-            height: 300px;
-            padding: 10px 0;
+        .container-eat .card-eat-e:hover {
+            opacity: .5;
         }
 
-        .card-map iframe {
+        .container-eat h2 {
+            padding-top: 40px;
+            font-size: 20px;
+        }
+
+        .container-eat p,
+        span {
+            font-size: 16px;
+            padding: 20px 0;
+        }
+
+
+        .eat-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .eat-txt {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .card-eat {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border: #888888 solid 1px;
+            border-radius: 10px;
+            height: 200px;
+        }
+
+        .card-eat .eat-pic img {
             width: 100%;
             height: 100%;
+        }
+
+        .card-eat-tab {
+            position: absolute;
+            top: 150px;
+            left: 10px;
+        }
+
+        /* .waterfall */
+        body {
+            margin: 0;
+            padding: 10px;
+        }
+
+        .waterfall {
+            width: 100%;
+            margin: 0px auto;
+            column-count: 4;
+            /*欄數*/
+            column-gap: 10px;
+            /*每欄間隔*/
+        }
+
+        .item {
+            /* background-color: lightgrey; */
+            text-align: center;
+            background-color: #000000;
+            box-sizing: border-box;
+            margin: 0 auto 5px;
+            break-inside: avoid;
+            border-radius: 10px;
+            /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
+        }
+
+        .item:hover img {
+            opacity: .5;
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
             border-radius: 10px;
         }
 
-        .card {
-            width: 150px;
-        }
-
-        .card img {
-            width: 100%;
+        .section-waterfall {
+            max-width: 900px;
+            padding-top: 40px;
         }
     </style>
 </head>
@@ -204,7 +266,7 @@
     <header class="main-header">
         <div class="bv"><img src="foodmap/banner.jpg"></div>
         <div class="logo">
-            <a href="https://jp6bj3.github.io/foodmap/Mockup/index2.html">
+            <a href="#">
                 <img src="foodmap/logo.png">
         </div></a>
         <div class="phone"><a href="#">下載APP</a></div>
@@ -223,51 +285,55 @@
 
     </header>
     <main>
-        <div class="section section-foodsort">
-            <p>高級餐廳</p>
-            <p>米其林</p>
-            <p>品牌餐廳</p>
-        </div>
-
-        <div class="section section-map">
-            <div class="card-map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3640.40605792089!2d120.6652766!3d24.1574881!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d78069134cb%3A0xd440a632b89ece36!2z5ZyL56uL6Ieq54S256eR5a245Y2a54mp6aSo5qSN54mp5ZyS!5e0!3m2!1szh-TW!2stw!4v1713309623508!5m2!1szh-TW!2stw"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-            </div>
-        </div>
-        <div class="section section-restaurant">
-            <div class="container">
-                <div class="row row-cols-4">
-                    <div class="col card">
-                        <img src="https://fakeimg.pl/300x200/200">
-                    </div>
-                    <div class="col card">
-                        <img src="https://fakeimg.pl/300x200/200">
-                    </div>
-                    <div class="col card">
-                        <img src="https://fakeimg.pl/300x200/200">
-                    </div>
-                    <div class="col card">
-                        <img src="https://fakeimg.pl/300x200/200">
-                    </div>
-                    <div class="col card">
-                        <img src="https://fakeimg.pl/300x200/200">
-                    </div>
-                    <div class="col card">
-                        <img src="https://fakeimg.pl/300x200/200">
-                    </div>
-                    <div class="col card">
-                        <img src="https://fakeimg.pl/300x200/200">
+        <div class="section section-eat">
+            <div class="container container-eat">
+                <div class="row row-cols-1 row-cols-md-1">
+                    <div class="col eat-col">
+                        <h2>附近的大家吃了什麼?</h2>
+                        <div class="eat-txt">
+                            <p>查看身邊有使用此app的人都吃些甚麼，或查看朋友的動態。</p>
+                            <p>更多資訊 </p>
+                        </div>
                     </div>
                 </div>
+                <!-- <div class="row row-cols-4 row-cols-md-4">
+                    <div class="col">
+                        <div class="card card-eat">
+                            <a href="#"><img class="eat-pic" src="foodmap/foodrev-fish.jpg">
+                                <div class="card-eat-tab">
+                                    <p>查看附近的餐廳
+                                    </p>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="row row-cols-4 row-cols-md-4">
+                    <div class="col">
+                        <a href="#"><img class="card-eat-e" src="foodmap/card-eat1.png" alt=""></a>
+                    </div>
+                    <div class="col">
+                        <a href="#"><img class="card-eat-e" src="foodmap/card-eat2.png" alt=""></a>
+                    </div>
+                    <div class="col">
+                        <a href="#"><img class="card-eat-e" src="foodmap/card-eat3.png" alt=""></a>
+                    </div>
+                    <div class="col">
+                        <a href="#"><img class="card-eat-e" src="foodmap/card-eat4.png" alt=""></a>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-
-
+        <div class="section-waterfall waterfall">
+            <div class="item"><img src="https://picsum.photos/200/300/?random=10"></div>
+            <div class="item"><img src="https://picsum.photos/200/350/?random=12"></div>
+            <div class="item"><img src="https://picsum.photos/200/300/?random=15"></div>
+            <div class="item"><img src="https://picsum.photos/200/200/?random=13"></div>
+            <div class="item"><img src="https://picsum.photos/200/330/?random=17"></div>
+            <div class="item"><img src="https://picsum.photos/200/300/?random=18"></div>
+            <div class="item"><img src="https://picsum.photos/200/300/?random=19"></div>
+            <div class="item"><img src="https://picsum.photos/200/300/?random=29"></div>
+        </div>
     </main>
 </body>
 
