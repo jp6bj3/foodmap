@@ -116,8 +116,9 @@
         }
 
         @media screen and (max-width:768px) {
-            .main-header .main-nav a+a {
-                border-top: 1px solid #fff;
+            .main-header .main-nav a {
+                margin: auto;
+                /* border-top: 1px solid #fff; */
                 /* A後面的A 加上TOP線 */
             }
         }
@@ -246,23 +247,125 @@
             }
         }
 
+        .section-foodsort .txt {
+            padding: 10px;
+
+        }
+
+        .section-foodsort img {
+            border-radius: 10px 10px 0 0;
+            position: relative;
+        }
+
         .card-foodsort {
             display: flex;
             flex-direction: column;
             border-radius: 10px;
             border: #888888 1px solid;
+            z-index: 5;
+            position: relative;
+            ;
+        }
+
+        .card-foodsort:hover {
+            background: #000;
+            height: 80%;
+        }
+
+        @media screen and (max-width:768px) {
+            .card-foodsort:hover {
+                height: 70%;
+            }
+
+        }
+
+        .card-foodsort:hover img {
+            opacity: .5;
+            /* background: #000; */
+        }
+
+        .card-foodsort:hover .tab {
+            display: block;
         }
 
         .card-foodsort .tab {
             position: absolute;
-            background: #000;
+            top: 45%;
+            left: 45%;
+            /* background: #000; */
+            color: #ffffff;
+            z-index: 4;
+            display: none;
+
         }
 
         /* 吃甚麼 */
 
+        /* user */
+        .section-swipercard-user .row {
+            flex-wrap: nowrap;
+        }
+
+        .section-swipercard-user h2 {
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        /* new */
+        .section-swipercard-new {
+            padding-bottom: 15vh;
+        }
+
+        .section-swipercard-new h2 {
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        .container-swipercard h2 {
+            padding-left: 20px;
+        }
+
+        .swipercard {
+            display: flex;
+            flex-direction: column;
+            width: 175px;
+            /* background-color: #6d4040; */
+            padding-right: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .section-swipercard .row {
+            flex-wrap: nowrap;
+        }
+
+
+        .swipercard img {
+            border: #888888 1px solid;
+            border-radius: 10px;
+            width: 100%;
+            height: 25vh;
+            object-fit: cover;
+        }
+
+        .swipercard:hover img {
+            scale: 105%;
+        }
+
+
+        .swipercard .swipercard-tab {
+            position: absolute;
+            left: 37%;
+            top: 42%;
+            z-index: 4;
+        }
+
+        .swipercard h3 {
+            color: #ffffff;
+        }
+
         /* 下載app */
-
-
         .section-downloadappB {
             background-color: #FFF5EC;
             margin: -5%;
@@ -296,6 +399,10 @@
             height: 20%;
         }
 
+        .container-downloadappB .btn img {
+            border-radius: 10px;
+        }
+
         .btn img {
             width: 45%;
         }
@@ -314,45 +421,7 @@
         }
 
 
-        .container-swipercard h2 {
-            padding-left: 20px;
-        }
-
-        .swipercard {
-            display: flex;
-            flex-direction: column;
-            width: 200px;
-            /* background-color: #6d4040; */
-            padding-right: 10px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .section-swipercard .row {
-            flex-wrap: nowrap;
-        }
-
-        .section-swipercard-user .row {
-            flex-wrap: nowrap;
-        }
-
-
-        .swipercard img {
-            border: #888888 1px solid;
-            border-radius: 10px;
-        }
-
-        .swipercard .swipercard-tab {
-            position: absolute;
-            left: 37%;
-            top: 42%;
-            z-index: 4;
-        }
-
-        .swipercard h3 {
-            color: #ffffff;
-        }
-
+        /* map */
         .section-swipercard-map .row {
             flex-wrap: nowrap;
         }
@@ -361,6 +430,7 @@
             display: flex;
             flex-direction: row;
             padding-left: 10%;
+            padding-top: 5vh;
         }
 
         .card-map {
@@ -377,6 +447,86 @@
 
         .section-swipercard-map .container-swipercard {
             overflow: hidden;
+        }
+
+        /* user */
+
+        .section-swipercard-user .swiper-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+
+        .card-user {
+            width: 175px;
+            height: 200px;
+            border: #888888 solid 1px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .card-user p,
+        span {
+            line-height: 20px;
+        }
+
+        .card-user .card-user-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .card-user-pic img {
+            width: 100%;
+        }
+
+        .card-user .user-btn {
+            padding: 5px 20px;
+            border-radius: 3px;
+            border: #734e16 solid 1px;
+        }
+
+        .user-btn:hover {
+            background-color: #FFBA51;
+            border: none;
+        }
+
+        .user-btn:hover p {
+            color: #ffffff;
+        }
+
+        .card-user-tab {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            background-color: #FFBA51;
+            padding: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .card-user-tab h3 {
+            color: #ffffff;
+            font-size: 12px;
+        }
+
+        .card-user-p {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-user-icon {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 55px;
+            left: 90px;
+        }
+
+        .card-user-icon img {
+            width: 100%;
         }
 
         .swiper-foodreview {}
@@ -425,10 +575,11 @@
                 <div class="row row-cols-3 row-cols-md-3">
                     <div class="col">
                         <div class="card card-foodsort">
-                            <div class="tab">title</div>
-                            <a href="#"><img src="https://picsum.photos/300/200/?random=10">
+                            <div class="tab">高級餐廳</div>
+                            <a href="https://jp6bj3.github.io/foodmap/Mockup/foodreview.html"><img
+                                    src="foodmap/sort1.jpg">
                                 <div class="txt">
-                                    <p>查看附近的餐廳
+                                    <p>查看熱門分類
                                     </p>
                             </a>
                         </div>
@@ -436,10 +587,10 @@
                 </div>
                 <div class="col">
                     <div class="card card-foodsort"><a href="#">
-                            <div class="tab">title</div>
-                            <div class="pic"><img src="https://picsum.photos/300/200/?random=10"></div>
+                            <div class="tab">披薩店</div>
+                            <div class="pic"><img src="foodmap/card-sort-pizza.jpg"></div>
                             <div class="txt">
-                                <p>查看附近的餐廳
+                                <p>查看熱門分類
                                 </p>
                             </div>
                         </a>
@@ -447,10 +598,10 @@
                 </div>
                 <div class="col">
                     <div class="card card-foodsort"> <a href="#">
-                            <div class="tab">title</div>
-                            <div class="pic"><img src="https://picsum.photos/300/200/?random=10"></div>
+                            <div class="tab">精緻甜點</div>
+                            <div class="pic"><img src="foodmap/sort2.jpg"></div>
                             <div class="txt">
-                                <p>查看附近的餐廳
+                                <p>查看熱門分類
                                 </p>
                             </div>
                         </a>
@@ -608,63 +759,109 @@
         </div>
         <div class="section section-swipercard-user">
             <div class="container container-swipercard">
-                <h2>團購新品</h2>
+                <h2>推薦部落客</h2>
                 <div class="container mySwiper">
                     <div class="row swiper-wrapper">
                         <div class="col swiper-slide">
-                            <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
-                                <div class="swipercard-tab">
-                                    <h3>title</h3>
+                            <div class="card-user">
+                                <img class="card-user-pic" src="https://picsum.photos/300/200/?random=10">
+                                <div class="card-user-icon"><img src="foodmap/usericon.png" alt=""></div>
+                                <div class="card-user-p">
+                                    <p>部落客A</p>
+                                    <p>台中咖啡廳</p>
+                                </div>
+                                <div class="user-btn">
+                                    <p>追蹤</p>
+                                </div>
+                                <div class="card-user-tab">
+                                    <h3>人氣王</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col swiper-slide">
-                            <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
-                                <div class="swipercard-tab">
-                                    <h3>title</h3>
+                            <div class="card-user">
+                                <img class="card-user-pic" src="https://picsum.photos/300/200/?random=12">
+
+                                <div class="card-user-p">
+                                    <p>部落客B</p>
+                                    <p>台南拉麵店</p>
+                                </div>
+                                <div class="user-btn">
+                                    <p>追蹤</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col swiper-slide">
+                            <div class="card-user">
+                                <img class="card-user-pic" src="https://picsum.photos/300/200/?random=11">
+                                <div class="card-user-icon"><img src="foodmap/usericon.png" alt=""></div>
+                                <div class="card-user-p">
+                                    <p>部落客C</p>
+                                    <p>中山區小吃</p>
+                                </div>
+                                <div class="user-btn">
+                                    <p>追蹤</p>
+                                </div>
+                                <div class="card-user-tab">
+                                    <h3>人氣王</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col swiper-slide">
-                            <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
-                                <div class="swipercard-tab">
-                                    <h3>title</h3>
+                            <div class="card-user">
+                                <img class="card-user-pic" src="https://picsum.photos/300/200/?random=15">
+                                <div class="card-user-p">
+                                    <p>部落客D</p>
+                                    <p>台中火鍋店</p>
+                                </div>
+                                <div class="user-btn">
+                                    <p>追蹤</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col swiper-slide">
-                            <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
-                                <div class="swipercard-tab">
-                                    <h3>title</h3>
+                            <div class="card-user">
+                                <img class="card-user-pic" src="https://picsum.photos/300/200/?random=10">
+                                <div class="card-user-icon"><img src="foodmap/usericon.png" alt=""></div>
+                                <div class="card-user-p">
+                                    <p>部落客E</p>
+                                    <p>台中咖啡廳</p>
+                                </div>
+                                <div class="user-btn">
+                                    <p>追蹤</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col swiper-slide">
+                            <div class="card-user">
+                                <img class="card-user-pic" src="https://picsum.photos/300/200/?random=45">
+                                <div class="card-user-icon"><img src="foodmap/usericon.png" alt=""></div>
+                                <div class="card-user-p">
+                                    <p>部落客A</p>
+                                    <p>台中咖啡廳</p>
+                                </div>
+                                <div class="user-btn">
+                                    <p>追蹤</p>
+                                </div>
+                                <div class="card-user-tab">
+                                    <h3>人氣王</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col swiper-slide">
-                            <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
-                                <div class="swipercard-tab">
-                                    <h3>title</h3>
+                            <div class="card-user">
+                                <img class="card-user-pic" src="https://picsum.photos/300/200/?random=20">
+                                <div class="card-user-icon"><img src="foodmap/usericon.png" alt=""></div>
+                                <div class="card-user-p">
+                                    <p>部落客A</p>
+                                    <p>台中咖啡廳</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col swiper-slide">
-                            <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
-                                <div class="swipercard-tab">
-                                    <h3>title</h3>
+                                <div class="user-btn">
+                                    <p>追蹤</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col swiper-slide">
-                            <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
-                                <div class="swipercard-tab">
-                                    <h3>title</h3>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -672,54 +869,54 @@
             </div>
             <div class="swiper-pagination"></div>
         </div>
-        <div class="section section-swipercard">
+        <div class="section section-swipercard section-swipercard-new">
             <div class="container container-swipercard">
                 <h2>團購新品</h2>
-                <div class="container mySwiper">
+                <div class="container mySwiper ">
                     <div class="row swiper-wrapper">
                         <div class="col swiper-slide">
                             <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
+                                <img class="swipercard-pic" src="foodmap/swipercard1.jpg">
                                 <div class="swipercard-tab">
-                                    <h3>title</h3>
+                                    <h3>中式餃子</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col swiper-slide">
                             <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
+                                <img class="swipercard-pic" src="foodmap/swipercard2.jpg">
                                 <div class="swipercard-tab">
-                                    <h3>title</h3>
+                                    <h3>美式漢堡</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col swiper-slide">
                             <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
+                                <img class="swipercard-pic" src="foodmap/swipercard3.jpg">
                                 <div class="swipercard-tab">
-                                    <h3>title</h3>
+                                    <h3>壽司</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col swiper-slide">
                             <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
+                                <img class="swipercard-pic" src="foodmap/swipercard4.jpg">
                                 <div class="swipercard-tab">
-                                    <h3>title</h3>
+                                    <h3>鮮食調理包</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col swiper-slide">
                             <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
+                                <img class="swipercard-pic" src="foodmap/swipercard5.jpg">
                                 <div class="swipercard-tab">
-                                    <h3>title</h3>
+                                    <h3>生吐司</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col swiper-slide">
                             <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
+                                <img class="swipercard-pic" src="foodmap/swipercard6.jpg">
                                 <div class="swipercard-tab">
                                     <h3>title</h3>
                                 </div>
