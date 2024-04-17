@@ -264,7 +264,6 @@
             border: #888888 1px solid;
             z-index: 5;
             position: relative;
-            ;
         }
 
         .card-foodsort:hover {
@@ -299,9 +298,152 @@
 
         }
 
+        /* 地圖 */
+        .swipercard-pic {
+            display: flex;
+            width: 175px;
+            /* background-color: #6d4040; */
+            padding-right: 10px;
+        }
+
+        .section-swipercard-map h2 {
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .section-swipercard-map .row {
+            flex-wrap: nowrap;
+        }
+
+        .section-swipercard-map {
+            display: flex;
+            flex-direction: row;
+            padding-left: 10%;
+            padding-top: 5vh;
+        }
+
+        .card-map {
+            width: 200px;
+            height: 320px;
+        }
+
+        .card-map iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px 0 0 10px;
+
+        }
+
+        .section-swipercard-map .container-swipercard {
+            overflow: hidden;
+        }
+
+
+        .swiper-foodreview {}
+
         /* 吃甚麼 */
 
-        /* user */
+        .container-eat .card-eat-e {
+            width: 100%;
+        }
+
+        .container-eat .card-eat-e:hover {
+            opacity: .5;
+        }
+
+        .container-eat h2 {
+            padding-top: 40px;
+            font-size: 20px;
+        }
+
+        .container-eat p,
+        span {
+            font-size: 16px;
+            padding: 20px 0;
+        }
+
+
+        .eat-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .eat-txt {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .card-eat {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border: #888888 solid 1px;
+            border-radius: 10px;
+            height: 200px;
+        }
+
+        .card-eat .eat-pic img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-eat-tab {
+            position: absolute;
+            top: 150px;
+            left: 10px;
+        }
+
+        /* 貼文 */
+        .section-post {
+            padding-top: 20px;
+        }
+
+        .section-post .post-pic {
+            width: 70vh;
+            height: 40vh;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        .post-pic img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .post-txt {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .post-txt h2 {
+            font-size: 24px;
+            line-height: 20px;
+        }
+
+        .post-txt p {
+            font-size: 16px;
+            padding-top: 20px;
+            line-height: 30px;
+            padding-bottom: 20px;
+
+        }
+
+
+        .post-txt .post-btn:hover {
+            opacity: .5;
+        }
+
+        .post-txt .post-btn p {
+            display: inline-block;
+            background-color: #FFBA51;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #ffffff;
+        }
+
+        /* 使用者 */
         .section-swipercard-user .row {
             flex-wrap: nowrap;
         }
@@ -311,7 +453,85 @@
             font-size: 24px;
         }
 
-        /* new */
+        .section-swipercard-user .swiper-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+
+        .card-user {
+            width: 175px;
+            height: 200px;
+            border: #888888 solid 1px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .card-user p,
+        span {
+            line-height: 20px;
+        }
+
+        .card-user .card-user-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .card-user-pic img {
+            width: 100%;
+        }
+
+        .card-user .user-btn {
+            padding: 5px 20px;
+            border-radius: 3px;
+            border: #734e16 solid 1px;
+        }
+
+        .user-btn:hover {
+            background-color: #FFBA51;
+            border: none;
+        }
+
+        .user-btn:hover p {
+            color: #ffffff;
+        }
+
+        .card-user-tab {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            background-color: #FFBA51;
+            padding: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .card-user-tab h3 {
+            color: #ffffff;
+            font-size: 12px;
+        }
+
+        .card-user-p {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-user-icon {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 55px;
+            left: 90px;
+        }
+
+        .card-user-icon img {
+            width: 100%;
+        }
+
+        /* 新品 */
         .section-swipercard-new {
             padding-bottom: 15vh;
         }
@@ -419,117 +639,6 @@
                 text-align: center;
             }
         }
-
-
-        /* map */
-        .section-swipercard-map .row {
-            flex-wrap: nowrap;
-        }
-
-        .section-swipercard-map {
-            display: flex;
-            flex-direction: row;
-            padding-left: 10%;
-            padding-top: 5vh;
-        }
-
-        .card-map {
-            width: 200px;
-            height: 300px;
-        }
-
-        .card-map iframe {
-            width: 100%;
-            height: 100%;
-            border-radius: 10px 0 0 10px;
-
-        }
-
-        .section-swipercard-map .container-swipercard {
-            overflow: hidden;
-        }
-
-        /* user */
-
-        .section-swipercard-user .swiper-wrapper {
-            display: flex;
-            gap: 10px;
-        }
-
-        .card-user {
-            width: 175px;
-            height: 200px;
-            border: #888888 solid 1px;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .card-user p,
-        span {
-            line-height: 20px;
-        }
-
-        .card-user .card-user-pic {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-
-        .card-user-pic img {
-            width: 100%;
-        }
-
-        .card-user .user-btn {
-            padding: 5px 20px;
-            border-radius: 3px;
-            border: #734e16 solid 1px;
-        }
-
-        .user-btn:hover {
-            background-color: #FFBA51;
-            border: none;
-        }
-
-        .user-btn:hover p {
-            color: #ffffff;
-        }
-
-        .card-user-tab {
-            position: absolute;
-            top: 15px;
-            left: 0;
-            background-color: #FFBA51;
-            padding: 10px;
-            border-radius: 0 5px 5px 0;
-        }
-
-        .card-user-tab h3 {
-            color: #ffffff;
-            font-size: 12px;
-        }
-
-        .card-user-p {
-            padding: 15px;
-            text-align: center;
-        }
-
-        .card-user-icon {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            top: 55px;
-            left: 90px;
-        }
-
-        .card-user-icon img {
-            width: 100%;
-        }
-
-        .swiper-foodreview {}
     </style>
 </head>
 
@@ -619,62 +728,42 @@
             <div class="container container-swipercard">
                 <h2>精選食評</h2>
                 <div class="container mySwiper">
-                    <div class="row swiper-wrapper ">
+                    <div class="row swiper-wrapper">
                         <div class="col swiper-slide">
                             <div class="swiper-foodreview">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
+                                <img class="swipercard-pic" src="foodmap/swiper-foodreview1.png">
                                 <div class="swipercard-tab">
-                                    <h3>title</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col swiper-slide ">
-                            <div class="swipercard swiper-foodreview">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
-                                <div class="swipercard-tab">
-                                    <h3>title</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col swiper-slide">
-                            <div class="swipercard swiper-foodreview">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
+                            <div class="swiper-foodreview">
+                                <img class="swipercard-pic" src="foodmap/swiper-foodreview2.png">
                                 <div class="swipercard-tab">
-                                    <h3>title</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col swiper-slide">
-                            <div class="swipercard swiper-foodreview">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
+                            <div class="swiper-foodreview">
+                                <img class="swipercard-pic" src="foodmap/swiper-foodreview3.png">
                                 <div class="swipercard-tab">
-                                    <h3>title</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col swiper-slide">
-                            <div class="swipercard swiper-foodreview">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
+                            <div class="swiper-foodreview">
+                                <img class="swipercard-pic" src="foodmap/swiper-foodreview4.png">
                                 <div class="swipercard-tab">
-                                    <h3>title</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col swiper-slide">
-                            <div class="swipercard swiper-foodreview">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
+                            <div class="swiper-foodreview">
+                                <img class="swipercard-pic" src="foodmap/swiper-foodreview5.png">
                                 <div class="swipercard-tab">
-                                    <h3>title</h3>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col swiper-slide">
-                            <div class="swipercard swiper-foodreview">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
-                                <div class="swipercard-tab">
-                                    <h3>title</h3>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -683,75 +772,61 @@
         </div>
         <div class="section section-eat">
             <div class="container container-eat">
-                <div class="row row-cols-12 row-cols-md-12">
-                    <div class="col">
+                <div class="row row-cols-1 row-cols-md-1">
+                    <div class="col eat-col">
                         <h2>附近的大家吃了什麼?</h2>
                         <div class="eat-txt">
                             <p>查看身邊有使用此app的人都吃些甚麼，或查看朋友的動態。</p>
-                            <span>更多資訊 </span>
+                            <p>更多資訊 </p>
                         </div>
                     </div>
                 </div>
-                <div class="row row-cols-4 row-cols-md-4">
+                <!-- <div class="row row-cols-4 row-cols-md-4">
                     <div class="col">
-                        <div class="card card-foodsort">
-                            <div class="tab">title</div>
-                            <a href="#"><img src="https://picsum.photos/300/200/?random=10">
-                                <div class="txt">
+                        <div class="card card-eat">
+                            <a href="#"><img class="eat-pic" src="foodmap/foodrev-fish.jpg">
+                                <div class="card-eat-tab">
                                     <p>查看附近的餐廳
                                     </p>
                             </a>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card card-foodsort"><a href="#">
-                            <div class="tab">title</div>
-                            <div class="pic"><img src="https://picsum.photos/300/200/?random=10"></div>
-                            <div class="txt">
-                                <p>查看附近的餐廳
-                                </p>
-                            </div>
-                        </a>
+                </div> -->
+                <div class="row row-cols-4 row-cols-md-4">
+                    <div class="col">
+                        <a href="#"><img class="card-eat-e" src="foodmap/card-eat1.png" alt=""></a>
+                    </div>
+                    <div class="col">
+                        <a href="#"><img class="card-eat-e" src="foodmap/card-eat2.png" alt=""></a>
+                    </div>
+                    <div class="col">
+                        <a href="#"><img class="card-eat-e" src="foodmap/card-eat3.png" alt=""></a>
+                    </div>
+                    <div class="col">
+                        <a href="#"><img class="card-eat-e" src="foodmap/card-eat4.png" alt=""></a>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card card-foodsort"> <a href="#">
-                            <div class="tab">title</div>
-                            <div class="pic"><img src="https://picsum.photos/300/200/?random=10"></div>
-                            <div class="txt">
-                                <p>查看附近的餐廳
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card card-foodsort"> <a href="#">
-                            <div class="tab">title</div>
-                            <div class="pic"><img src="https://picsum.photos/300/200/?random=10"></div>
-                            <div class="txt">
-                                <p>查看附近的餐廳
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+
             </div>
+        </div>
         </div>
         <div class="section section-post">
             <div class="container">
                 <div class="row row-cols-2">
                     <div class="col">
-                        <img src="https://picsum.photos/300/200/?random=10">
+                        <img class="post-pic" src="foodmap/post.jpg">
                     </div>
-                    <div class="txt">
-                        <h2>甜點控必訪！捷運出站步行就到！</h2>
+                    <div class="post-txt">
+                        <div class="post-title">
+                            <h2>甜點控必訪！捷運出站步行就到！</h2>
+                        </div>
                         <p>隱身於中山巷弄中，小有名氣的日式風格咖啡廳，木質調<br>
                             空間布置得非常溫馨，每日提供不同的甜點，以價位來說<br>
                             CP值非常高，經常一到下午就會滿座。</p>
-                        <div class="btn">
-                            查看店家
+                        <div class="post-btn">
+                            <a href="#">
+                                <p>查看店家</p>
+                            </a>
                         </div>
                     </div>
                 </div>
