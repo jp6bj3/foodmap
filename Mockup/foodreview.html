@@ -236,16 +236,17 @@
         }
 
         .content-text {
-            font-size: 20px;
+            font-size: 16px;
             line-height: 40px;
         }
 
         .content-text-img {
-            width: 100%;
+            width: 80%;
             aspect-ratio: 16/9;
             overflow: hidden;
             margin-bottom: 10px;
             position: relative;
+            margin: 10px auto;
         }
 
         .content-text-img img {
@@ -253,6 +254,12 @@
             object-fit: cover;
             position: absolute;
             bottom: -10px;
+        }
+
+        @media screen and (max-width:768px) {
+            .content-text-img {
+                width: 100%;
+            }
         }
 
         .section-restaurant {
