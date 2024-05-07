@@ -10,32 +10,14 @@
     <link rel="stylesheet" href="css/font.css">
 
     <style>
-        /* .section {
-            overflow: hidden;
-        } */
-
-       .section{
-            margin: 0 auto;  
-            max-width: 1200px;
-                        overflow: hidden;
-
-        }
-        /* .section-eat,
-        .section-foodsort,
-        .section-swipercard,
-        .section-swipercard-map,
-        .mySwiper {
-             max-width: 1200px;
-            overflow: hidden;
-        } */
-
-
-
         .main-header {
             display: flex;
             justify-content: space-between;
             padding: 10px;
             position: relative;
+        }
+        .section{
+            overflow: hidden;
         }
 
         #switch {
@@ -43,8 +25,9 @@
         }
 
         .main-header .logo {
-          width: 98%;
+            width: 100%;
             z-index: 2;
+            padding: 5px 0;
         }
 
         @media screen and (min-width:768px) {
@@ -52,13 +35,7 @@
                 display: flex;
                 position: absolute;
                 justify-content: center;
-                padding:8% 0 0 0;
-            }
-        }
-
-        @media screen and (min-width:1150px) {
-            .main-header .logo {
-                padding: 100px 0 0 0;
+                padding: 10% 0 0 0;
             }
         }
 
@@ -141,15 +118,18 @@
             color: aliceblue;
         }
 
-       
+        @media screen and (max-width:768px) {
+            .main-header .main-nav a+a {
+                /* border-top: 1px solid #fff; */
+                /* A後面的A 加上TOP線 */
+            }
+        }
 
         #switch:checked~.main-header .main-nav {
             display: block;
+            z-index: 2;
         }
-        .main-header .main-nav ul{
-        z-index: 10;
-        }
-   
+
 
 
         /* 底圖 */
@@ -188,18 +168,16 @@
         }
 
         .search-bar input {
-            padding: 14px;
+            padding: 14px 25px;
             border: 1px solid #ddd;
             background-color: #ffffff;
             border-radius: 10px;
             width: 92%;
-            margin: 0 auto;
         }
 
         @media screen and (max-width:768px) {
             .header-search {
                 display: none;
-                 width: 92%;
             }
         }
 
@@ -215,18 +193,7 @@
             }
 
             .search-bar input {
-                outline: none;
-                width: 470px;
-            }
-        }
-
-        @media screen and (min-width:1150px) {
-            .header-search {
-                position: absolute;
-                padding: 200px 0 0;
-                left: 50%;
-                transform: translate(-50%, 0);
-                width: 500px;
+                outline: none
             }
         }
 
@@ -245,7 +212,9 @@
         }
 
         main {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
         }
 
         main a {
@@ -269,8 +238,6 @@
         }
 
         /* 餐廳分類 */
-
-
         .card img {
             width: 100%;
             position: relative;
@@ -290,10 +257,6 @@
             .section-foodsort,
             .section-eat {
                 padding: 20px 0 0 0;
-            }
-
-            .container-foodsort .row .col:first-child {
-                display: none;
             }
         }
 
@@ -349,13 +312,11 @@
         }
 
         /* 地圖 */
-
         .swipercard-pic {
             display: flex;
             width: 175px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            margin: 0 5px;
+            /* background-color: #6d4040; */
+            padding-right: 10px;
         }
 
         .section-swipercard-map h2 {
@@ -370,8 +331,8 @@
         .section-swipercard-map {
             display: flex;
             flex-direction: row;
-            padding: 5vh 10%;
-            /* max-width: 900px; */
+            padding-left: 10%;
+            padding-top: 5vh;
         }
 
         .card-map {
@@ -384,19 +345,16 @@
                 display: none;
             }
 
-            .section-swipercard-map {
-                padding-left: 0;
-
-            }
         }
 
         .card-map iframe {
             width: 100%;
             height: 100%;
             border-radius: 10px 0 0 10px;
+
         }
 
-        .container-swipercard {
+        .section-swipercard-map .container-swipercard {
             overflow: hidden;
         }
 
@@ -418,7 +376,7 @@
         }
 
         .container-eat p,
-        .container-eat span {
+        span {
             font-size: 16px;
             padding: 20px 0;
         }
@@ -446,6 +404,7 @@
 
         .card-eat .eat-pic img {
             width: 100%;
+            height: 100%;
         }
 
         .card-eat-tab {
@@ -457,12 +416,11 @@
         /* 貼文 */
         .section-post {
             padding-top: 20px;
-            margin: 0 auto;
         }
 
         .section-post .post-pic {
-            width: 400px;
-            /* height: 40vh; */
+            width: 70vh;
+            height: 40vh;
             border-radius: 20px;
             object-fit: cover;
         }
@@ -481,25 +439,6 @@
         .post-txt h2 {
             font-size: 24px;
             line-height: 20px;
-        }
-
-        @media screen and (max-width:768px) {
-            .section-post {
-                margin: auto;
-            }
-
-            .post-txt h2 {
-                padding-top: 20px;
-            }
-
-            .post-txt .post-btn {
-                margin: auto;
-            }
-
-            .section-post .post-pic {
-                width: 150%;
-            }
-
         }
 
         .post-txt p {
@@ -527,11 +466,6 @@
         .section-swipercard-user .row {
             flex-wrap: nowrap;
         }
-
-        /* .section-swipercard-user {
-            max-width: 1200px;
-            overflow: hidden;
-        } */
 
         .section-swipercard-user h2 {
             padding: 20px;
@@ -636,10 +570,9 @@
             display: flex;
             flex-direction: column;
             width: 175px;
-            /* padding-right: 10px; */
+            padding-right: 10px;
             position: relative;
             z-index: 1;
-            
         }
 
 
@@ -654,8 +587,8 @@
             width: 100%;
             height: 25vh;
             object-fit: cover;
-
         }
+
         .swipercard:hover img {
             scale: 105%;
         }
@@ -663,8 +596,8 @@
 
         .swipercard .swipercard-tab {
             position: absolute;
-            left: -50%;
-            top: 50%;
+            left: 37%;
+            top: 42%;
             z-index: 4;
         }
 
@@ -675,9 +608,9 @@
         /* 下載app */
         .section-downloadappB {
             background-color: #FFF5EC;
-            width: 100%;
+            /* margin: -5%;
+            padding: 5vh 0; */
         }
-      
 
         .card-downloadapp {
             /* padding: 5vh 5vw 0 0; */
@@ -716,17 +649,16 @@
 
         /* footer */
         .section-downloadappfooter {
-            padding: 20px 0 20px 0;
+            padding: 5% 0 20px 0;
             text-align: center;
         }
 
         @media screen and (min-width:768px) {
             .section-downloadappfooter {
-                /* padding: 80px 0 20px 0; */
+                padding: 80px 0 20px 0;
                 text-align: center;
             }
         }
-
     </style>
 </head>
 
@@ -769,7 +701,7 @@
         </div>
         <div class="section section-foodsort">
             <div class="container container-foodsort">
-                <div class="row row-cols-2 row-cols-md-3">
+                <div class="row row-cols-3 row-cols-md-3">
                     <div class="col">
                         <div class="card card-foodsort">
                             <div class="tab">高級餐廳</div>
@@ -880,7 +812,7 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="row row-cols-2 row-cols-md-4">
+                <div class="row row-cols-4 row-cols-md-4">
                     <div class="col">
                         <a href="https://jp6bj3.github.io/foodmap/Mockup/eatwhat.html"><img class="card-eat-e"
                                 src="foodmap/card-eat1.png" alt=""></a>
@@ -898,9 +830,10 @@
 
             </div>
         </div>
+
         <div class="section section-post">
             <div class="container">
-                <div class="row row-cols-2 row-md-cols-1">
+                <div class="row row-cols-2">
                     <div class="col">
                         <img class="post-pic" src="foodmap/post.jpg">
                     </div>
@@ -925,7 +858,8 @@
                 <h2>推薦部落客</h2>
                 <div class="container mySwiper">
                     <div class="row swiper-wrapper">
-                        <div class="col swiper-slide card-user">
+                        <div class="col swiper-slide">
+                            <div class="card-user">
                                 <img class="card-user-pic" src="https://picsum.photos/300/200/?random=10">
                                 <div class="card-user-icon"><img src="foodmap/usericon.png" alt=""></div>
                                 <div class="card-user-p">
@@ -938,6 +872,7 @@
                                 <div class="card-user-tab">
                                     <h3>人氣王</h3>
                                 </div>
+                            </div>
                         </div>
                         <div class="col swiper-slide">
                             <div class="card-user">
@@ -1138,7 +1073,7 @@
             slidesPerView: 4,
             centeredSlides: false, // 將這個設為 false
             slidesOffsetBefore: 0, // 加入這一行
-            spaceBetween:20,
+            spaceBetween: 0,
             grabCursor: true,
             pagination: {
                 el: ".swiper-pagination",

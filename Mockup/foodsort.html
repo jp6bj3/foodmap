@@ -196,6 +196,77 @@
         .card img {
             width: 100%;
         }
+
+         .card {
+      height: 230px;
+  }
+
+  .card-ad {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+      padding: 10px 0;
+  }
+
+  .card-ad h3 {
+      font-size: 20px;
+      padding: 8px 0;
+  }
+
+  .card-ad .ad-pic {
+      overflow: hidden;
+      border-radius: 10px;
+      object-fit: cover;
+  }
+
+  .card-ad .ad-pic img {
+      width: 100%;
+  }
+
+  .card-ad>p {
+      padding: 8px 0;
+  }
+
+  .score {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+
+  .score>p {
+      padding: 0 5px 5px;
+      font-size: 14px;
+  }
+
+  .star .material-symbols-outlined {
+      position: absolute;
+      position: absolute;
+      top: 5px;
+      left: 35px;
+      color: #fff;
+      font-size: 20px;
+      font-variation-settings:
+          'FILL' 1,
+          'wght' 500,
+          'GRAD' 0,
+          'opsz' 12;
+  }
+
+  .star {
+      background-color: #fa0;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+      border-radius: 5px;
+      position: relative;
+  }
+
+  .star p {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      color: #fff;
+  }
     </style>
 </head>
 
@@ -240,9 +311,28 @@
         </div>
         <div class="section section-restaurant">
             <div class="container">
-                <div class="row row-cols-2 row-cols-md-4">
-                    <div class="col card">
-                        <img src="https://fakeimg.pl/300x200/200">
+                <div class="row row-cols-2 row-cols-md-4 ad-list">
+                    <div class="col card card-ad">
+                   
+                            <img src="foodmap/eat(3).jpg" alt="" class="ad-pic">
+                            <h3 class="ad-h3">太陽蛋吐司</h3>
+                            <div class="score">
+                                <div class="star"><span class="material-symbols-outlined">
+                                        kid_star
+                                    </span>
+                                    <p>4.5</p>
+                                </div>
+                                <p>內用<br>23則</p>
+                                <span></span>
+                                <div class="star"><span class="material-symbols-outlined">
+                                        kid_star
+                                    </span>
+                                    <p>4.5</p>
+                                </div>
+                                <p>外帶<br>53則</p>
+                            </div>
+                            <p>大安區,步行5分鐘</p>
+                        
                     </div>
                     <div class="col card">
                         <img src="https://fakeimg.pl/300x200/200">
