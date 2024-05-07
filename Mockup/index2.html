@@ -5,14 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>foodmap</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="grid.css">
-    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/font.css">
 
     <style>
         /* .section {
             overflow: hidden;
         } */
+
+        main{
+             display: flex;
+             flex-direction: column;
+  /* 水平置中 */
+  justify-content: center;    
+  
+        }
+        .section-eat,
+        .section-foodsort,
+        .section-swipercard,
+        .section-swipercard-map,
+        .mySwiper {
+             max-width: 1200px;
+            overflow: hidden;
+        }
+
+
 
         .main-header {
             display: flex;
@@ -26,9 +44,8 @@
         }
 
         .main-header .logo {
-            width: 100%;
+          width: 98%;
             z-index: 2;
-            padding: 5px 0;
         }
 
         @media screen and (min-width:768px) {
@@ -36,7 +53,13 @@
                 display: flex;
                 position: absolute;
                 justify-content: center;
-                padding: 10% 0 0 0;
+                padding:8% 0 0 0;
+            }
+        }
+
+        @media screen and (min-width:1150px) {
+            .main-header .logo {
+                padding: 100px 0 0 0;
             }
         }
 
@@ -128,9 +151,11 @@
 
         #switch:checked~.main-header .main-nav {
             display: block;
-            z-index: 2;
         }
-
+        .main-header .main-nav ul{
+        z-index: 10;
+        }
+   
 
 
         /* 底圖 */
@@ -198,6 +223,16 @@
             }
         }
 
+        @media screen and (min-width:1150px) {
+            .header-search {
+                position: absolute;
+                padding: 200px 0 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: 500px;
+            }
+        }
+
         .search-bar .map {
             width: 15px;
             position: absolute;
@@ -213,9 +248,7 @@
         }
 
         main {
-            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
         }
 
         main a {
@@ -341,6 +374,7 @@
             display: flex;
             flex-direction: row;
             padding: 5vh 10%;
+            /* max-width: 900px; */
         }
 
         .card-map {
@@ -387,7 +421,7 @@
         }
 
         .container-eat p,
-        span {
+        .container-eat span {
             font-size: 16px;
             padding: 20px 0;
         }
@@ -415,7 +449,6 @@
 
         .card-eat .eat-pic img {
             width: 100%;
-            height: 100%;
         }
 
         .card-eat-tab {
@@ -497,6 +530,11 @@
         .section-swipercard-user .row {
             flex-wrap: nowrap;
         }
+
+        /* .section-swipercard-user {
+            max-width: 1200px;
+            overflow: hidden;
+        } */
 
         .section-swipercard-user h2 {
             padding: 20px;
@@ -639,12 +677,12 @@
         /* 下載app */
         .section-downloadappB {
             background-color: #FFF5EC;
-            margin: -5%;
-            padding: 5vh 0;
+            width: 100%;
         }
+      
 
         .card-downloadapp {
-            padding: 5vh 5vw 0 0;
+            /* padding: 5vh 5vw 0 0; */
         }
 
         @media screen and (min-width:768px) {
@@ -680,13 +718,13 @@
 
         /* footer */
         .section-downloadappfooter {
-            padding: 5% 0 20px 0;
+            padding: 20px 0 20px 0;
             text-align: center;
         }
 
         @media screen and (min-width:768px) {
             .section-downloadappfooter {
-                padding: 80px 0 20px 0;
+                /* padding: 80px 0 20px 0; */
                 text-align: center;
             }
         }

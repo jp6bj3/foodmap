@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="../css/swiper-eat.css">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/grid.css">
+        
+
+    <!-- Demo styles -->
+  
+
+
+    </style>
+</head>
+
+<body>
+    <div class="section section-eattitle">
+        <div class="container container-eat">
+            <div class="row row-cols-1 row-cols-md-1">
+                <div class="col eat-col">
+                    <h2>精選動態</h2>
+                    <div class="eat-txt">
+                        <p>台北市, 大安區附近</p>
+                        <p>2455瀏覽 | 231人說讚 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Swiper-eat -->
+    <div class="container">
+        <div class="row"></div>
+    </div>
+
+    <div class="container section-eat">
+        <div class="swiper mySwiper-eat">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide col"> 
+                    <div class="card-eat">
+                    <a href="#"><img class="eat-pic" src="../foodmap/eat(1).jpg">
+                        <div class="card-eat-tab">
+                            <span>大安區 某餐廳<br>NT.260 覆盆莓蛋糕</span>
+                        </div>
+                        <span class="material-symbols-outlined">
+                            favorite
+                        </span>
+                    </a>
+                </div></div>
+                <div class="swiper-slide"><div class="card-eat">
+                    <a href="#"><img class="eat-pic" src="../foodmap/eat(8).jpg">
+                        <div class="card-eat-tab">
+                            <span>大安區 某餐廳<br>NT.260 覆盆莓蛋糕</span>
+                        </div>
+                        <span class="material-symbols-outlined">
+                            favorite
+                        </span>
+                    </a>
+                </div></div>
+                <div class="swiper-slide"><div class="card-eat">
+                    <a href="#"><img class="eat-pic" src="../foodmap/eat(3).jpg">
+                        <div class="card-eat-tab">
+                            <span>大安區 某餐廳<br>NT.260 覆盆莓蛋糕</span>
+                        </div>
+                        <span class="material-symbols-outlined">
+                            favorite
+                        </span>
+                    </a>
+                </div></div>
+                <div class="swiper-slide"><div class="card-eat">
+                    <a href="#"><img class="eat-pic" src="../foodmap/eat(7).jpg">
+                        <div class="card-eat-tab">
+                            <span>大安區 某餐廳<br>NT.260 覆盆莓蛋糕</span>
+                        </div>
+                        <span class="material-symbols-outlined">
+                            favorite
+                        </span>
+                    </a>
+                </div></div>
+                <div class="swiper-slide"><div class="card-eat">
+                    <a href="#"><img class="eat-pic" src="../foodmap/eat(6).jpg">
+                        <div class="card-eat-tab">
+                            <span>大安區 某餐廳<br>NT.260 覆盆莓蛋糕</span>
+                        </div>
+                        <span class="material-symbols-outlined">
+                            favorite
+                        </span>
+                    </a>
+                </div></div>
+                <div class="swiper-slide"><div class="card-eat">
+                    <a href="#"><img class="eat-pic" src="../foodmap/eat(4).jpg">
+                        <div class="card-eat-tab">
+                            <span>大安區 某餐廳<br>NT.260 覆盆莓蛋糕</span>
+                        </div>
+                        <span class="material-symbols-outlined">
+                            favorite
+                        </span>
+                    </a>
+                </div></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- mySwiper-eat -->
+    <script>
+        var swiper = new Swiper(".mySwiper-eat", {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+             navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+
+</html>
