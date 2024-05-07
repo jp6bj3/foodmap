@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <button class="tab-button active" data-tab="tab1">Tab 1</button>
+        <button class="tab-button" data-tab="tab2">Tab 2</button>
+        <button class="tab-button" data-tab="tab3">Tab 3</button>
+    </div>
+    
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab1">Content for Tab 1</div>
+        <div class="tab-pane" id="tab2">Content for Tab 2</div>
+        <div class="tab-pane" id="tab3">Content for Tab 3</div>
+    </div>
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // 隱藏所有分頁內容
+                    tabPanes.forEach(pane => {
+                        pane.classList.remove('active');
+                    });
+
+                    // 移除所有按鈕上的 active 類
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+
+                    // 顯示對應的分頁內容
+                    const targetPane = document.getElementById(button.dataset.tab);
+                    targetPane.classList.add('active');
+
+                    // 為按鈕添加 active 類
+                    button.classList.add('active');
+                });
+            });
+    </script>
+</body>
+</html>
