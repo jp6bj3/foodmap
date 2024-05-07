@@ -158,22 +158,23 @@
         }
 
         .section-foodsort {
-            padding-top: 20vh;
+            /* padding-top: 20vh; */
             display: flex;
             flex-direction: row;
-            padding-left: 9vw;
-
+            padding:20vh 10% 0 10%;
+        }
+        @media screen and (max-width:768px) {
+            .section-foodsort {
+                padding: 0 0 0 10px;
+              
+            }
         }
 
         .section-foodsort p {
             padding: 20px;
         }
 
-        @media screen and (max-width:768px) {
-            .section-foodsort {
-                padding-top: 20px;
-            }
-        }
+        
 
         .section-map {
             max-width: 1000px;
@@ -257,7 +258,7 @@
   }
 
   .star {
-      background-color: #fa0;
+      background-color: #FFBA51;
       display: inline-block;
       width: 60px;
       height: 30px;
@@ -271,6 +272,24 @@
       left: 8px;
       color: #fff;
   }
+   .tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+    /* border-style: 0,0,0, 1px solid #ff6a00; */
+.tab-button{
+    background-color: #fff;
+    border-style:none;
+}
+.tab-button:hover{
+    background-color: #b3b3b3;
+}
+.tab-button.active {
+  border-bottom: 2px solid #FFBA51; /* 底線顏色可自行調整 */
+}
     </style>
 </head>
 
@@ -298,10 +317,10 @@
 
     </header>
     <main>
-        <div class="section section-foodsort">
-            <p>高級餐廳</p>
-            <p>米其林</p>
-            <p>品牌餐廳</p>
+        <div class="section section-foodsort tabs">
+            <button class="tab-button active" data-tab="tab1"><p>高級餐廳</p></button>
+            <button class="tab-button" data-tab="tab2"><p>米其林</p></button>
+            <button class="tab-button" data-tab="tab3"><p>品牌餐廳</p></button>
         </div>
 
         <div class="section section-map">
@@ -313,9 +332,10 @@
 
             </div>
         </div>
-        <div class="section section-restaurant">
+        <div class="section section-restaurant tab-content">
             <div class="container">
-                <div class="row row-cols-2 row-cols-md-4 ad-list">
+                <div class="tab-pane active" id="tab1">
+                <div class="row row-cols-2 row-cols-md-4 ad-list ">
                     <div class="col card card-ad">
                             <img src="foodmap/img (66).jpg" alt="" class="ad-pic">
                             <h3 class="ad-h3">太陽蛋吐司</h3>
@@ -465,11 +485,334 @@
                     </div>
                 </div>
             </div>
+            <div class="tab-pane" id="tab2"><div class="row row-cols-2 row-cols-md-4 ad-list ">
+                    <div class="col card card-ad">
+                            <img src="foodmap/img (65).jpg" alt="" class="ad-pic">
+                            <h3 class="ad-h3">太陽蛋吐司</h3>
+                            <div class="score">
+                                <div class="star"><span class="material-symbols-outlined">
+                                        kid_star
+                                    </span>
+                                    <p>4.5</p>
+                                </div>
+                                <p>內用<br>23則</p>
+                                <span></span>
+                                <div class="star"><span class="material-symbols-outlined">
+                                        kid_star
+                                    </span>
+                                    <p>4.5</p>
+                                </div>
+                                <p>外帶<br>53則</p>
+                            </div>
+                            <p>大安區,步行5分鐘</p>
+                        
+                    </div>
+                    <div class="col card card-ad">
+                        <img src="foodmap/img (61).jpg" alt="" class="ad-pic">
+                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                        <div class="score">
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>內用<br>23則</p>
+                            <span></span>
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>外帶<br>53則</p>
+                        </div>
+                        <p>大安區,步行5分鐘</p>
+                    
+                    </div>
+                    <div class="col card card-ad">
+                        <img src="foodmap/img (60).jpg" alt="" class="ad-pic">
+                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                        <div class="score">
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>內用<br>23則</p>
+                            <span></span>
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>外帶<br>53則</p>
+                        </div>
+                        <p>大安區,步行5分鐘</p>
+                    
+                    </div>
+                    <div class="col card card-ad">
+                        <img src="foodmap/img (64).jpg" alt="" class="ad-pic">
+                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                        <div class="score">
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>內用<br>23則</p>
+                            <span></span>
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>外帶<br>53則</p>
+                        </div>
+                        <p>大安區,步行5分鐘</p>
+                    
+                    </div>
+                    <div class="col card card-ad">
+                        <img src="foodmap/img (62).jpg" alt="" class="ad-pic">
+                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                        <div class="score">
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>內用<br>23則</p>
+                            <span></span>
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>外帶<br>53則</p>
+                        </div>
+                        <p>大安區,步行5分鐘</p>
+                    
+                    </div>
+                    <div class="col card card-ad">
+                        <img src="foodmap/img (66).jpg" alt="" class="ad-pic">
+                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                        <div class="score">
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>內用<br>23則</p>
+                            <span></span>
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>外帶<br>53則</p>
+                        </div>
+                        <p>大安區,步行5分鐘</p>
+                    
+                    </div>
+                    <div class="col card card-ad">
+                        <img src="foodmap/img (67).jpg" alt="" class="ad-pic">
+                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                        <div class="score">
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>內用<br>23則</p>
+                            <span></span>
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>外帶<br>53則</p>
+                        </div>
+                        <p>大安區,步行5分鐘</p>
+                    
+                    </div>
+                </div></div>
+            <div class="tab-pane" id="tab3"><div class="row row-cols-2 row-cols-md-4 ad-list ">
+                    <div class="col card card-ad">
+                            <img src="foodmap/img (46).jpg" alt="" class="ad-pic">
+                            <h3 class="ad-h3">太陽蛋吐司</h3>
+                            <div class="score">
+                                <div class="star"><span class="material-symbols-outlined">
+                                        kid_star
+                                    </span>
+                                    <p>4.5</p>
+                                </div>
+                                <p>內用<br>23則</p>
+                                <span></span>
+                                <div class="star"><span class="material-symbols-outlined">
+                                        kid_star
+                                    </span>
+                                    <p>4.5</p>
+                                </div>
+                                <p>外帶<br>53則</p>
+                            </div>
+                            <p>大安區,步行5分鐘</p>
+                        
+                    </div>
+                    <div class="col card card-ad">
+                        <img src="foodmap/img (41).jpg" alt="" class="ad-pic">
+                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                        <div class="score">
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>內用<br>23則</p>
+                            <span></span>
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>外帶<br>53則</p>
+                        </div>
+                        <p>大安區,步行5分鐘</p>
+                    
+                    </div>
+                    <div class="col card card-ad">
+                        <img src="foodmap/img (49).jpg" alt="" class="ad-pic">
+                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                        <div class="score">
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>內用<br>23則</p>
+                            <span></span>
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>外帶<br>53則</p>
+                        </div>
+                        <p>大安區,步行5分鐘</p>
+                    
+                    </div>
+                    <div class="col card card-ad">
+                        <img src="foodmap/img (54).jpg" alt="" class="ad-pic">
+                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                        <div class="score">
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>內用<br>23則</p>
+                            <span></span>
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>外帶<br>53則</p>
+                        </div>
+                        <p>大安區,步行5分鐘</p>
+                    
+                    </div>
+                    <div class="col card card-ad">
+                        <img src="foodmap/img (52).jpg" alt="" class="ad-pic">
+                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                        <div class="score">
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>內用<br>23則</p>
+                            <span></span>
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>外帶<br>53則</p>
+                        </div>
+                        <p>大安區,步行5分鐘</p>
+                    
+                    </div>
+                    <div class="col card card-ad">
+                        <img src="foodmap/img (36).jpg" alt="" class="ad-pic">
+                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                        <div class="score">
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>內用<br>23則</p>
+                            <span></span>
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>外帶<br>53則</p>
+                        </div>
+                        <p>大安區,步行5分鐘</p>
+                    
+                    </div>
+                    <div class="col card card-ad">
+                        <img src="foodmap/img (20).jpg" alt="" class="ad-pic">
+                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                        <div class="score">
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>內用<br>23則</p>
+                            <span></span>
+                            <div class="star"><span class="material-symbols-outlined">
+                                    kid_star
+                                </span>
+                                <p>4.5</p>
+                            </div>
+                            <p>外帶<br>53則</p>
+                        </div>
+                        <p>大安區,步行5分鐘</p>
+                    
+                    </div>
+                </div></div>
+            </div>
+            </div>
         </div>
-
-
-
     </main>
+
+        <script>
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // 隱藏所有分頁內容
+                    tabPanes.forEach(pane => {
+                        pane.classList.remove('active');
+                    });
+
+                    // 移除所有按鈕上的 active 類
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+
+                    // 顯示對應的分頁內容
+                    const targetPane = document.getElementById(button.dataset.tab);
+                    targetPane.classList.add('active');
+
+                    // 為按鈕添加 active 類
+                    button.classList.add('active');
+                });
+            });
+        </script>
 </body>
 
 </html>
