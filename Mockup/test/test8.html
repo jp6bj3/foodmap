@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <button onclick="messageDiv()">Click Me</button>
+    <div class="item "  onclick="messageDiv()">
+        <div class="card-eat" onclick="showAlert()">
+            <a href="#"><img class="eat-pic" src="../foodmap/img (29).jpg">
+                <div class="card-eat-tab"><span>大安區 某餐廳<br>NT.260 覆盆莓蛋糕</span>
+                </div>
+                <span class="material-symbols-outlined">favorite</span>
+            </a>
+        </div>
+        <div class="card-eat">
+            <a href="#"><img class="eat-pic" src="../foodmap/img (29).jpg">
+                <div class="card-eat-tab"><span>大安區 某餐廳<br>NT.260 覆盆莓蛋糕</span>
+                </div>
+                <span class="material-symbols-outlined">favorite</span>
+            </a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <script>
+         const showModalBtn = document.getElementById('showModal');
+            const messageImg = messageDiv.querySelector('img');
+        function messageDiv() {
+                swal.fire({
+                   html: `<div class="post"><img src="${messageImg.src}" alt="Selected Image" class="post-pic"><br><span class="post-text">You clicked the image!</span></div>`,
+                    showCloseButton: true,
+                    showCancelButton: false,
+                    focusConfirm: false,
+                    showconfirmButton: false,
+                    confirmButtonText: ` <div class="post-icon"><span class="material-symbols-outlined">favorite</span></div>`,
+                    confirmButtonColor: 'transparent',
+                    });
+            };
+        const showAlert =  messageDiv.addEventListener('click', () => {
+                Swal.fire({
+                    html: `<div class="post"><img src="${messageImg.src}" alt="Selected Image" class="post-pic"><br><span class="post-text">You clicked the image!</span></div>`,
+                    showCloseButton: true,
+                    showCancelButton: false,
+                    focusConfirm: false,
+                    showconfirmButton: false,
+                    confirmButtonText: ` <div class="post-icon"><span class="material-symbols-outlined">favorite</span></div>`,
+                    confirmButtonColor: 'transparent',
+                });
+            });
+    </script>
+</body>
+
+</html>
