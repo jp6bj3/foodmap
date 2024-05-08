@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #map {
+  width: 100%;
+  height: 400px;
+}
+
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+<script>
+   function initMap() {
+        // 初始化地图
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 40.7128, lng: -74.0060 }, // 设置地图初始中心点
+            zoom: 10 // 设置初始缩放级别
+        });
+
+        // 添加点击事件
+        map.addListener('click', function (event) {
+            // 在点击位置添加自定义标记
+            addMarker(event.latLng, map);
+        });
+
+        // 添加自定义标记函数
+        function addMarker(location, map) {
+            // 创建标记
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png' // 自定义标记图标
+            });
+
+            // 创建信息窗口
+            var infowindow = new google.maps.InfoWindow({
+                content: 'Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng() // 显示点击位置的经纬度
+            });
+
+            // 点击标记显示信息窗口
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+        }
+    }
+
+
+</script>
+</body>
+</html>

@@ -4,20 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>foodmap</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/font.css">
 
     <style>
-        /* .section {
-            overflow: hidden;
-        } */
-
         .main-header {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
+            padding: 10px;
             position: relative;
         }
 
@@ -26,7 +21,7 @@
         }
 
         .main-header .logo {
-            width: 99%;
+            width: 100%;
             z-index: 2;
             padding: 5px 0;
         }
@@ -36,7 +31,7 @@
                 display: flex;
                 position: absolute;
                 justify-content: center;
-                padding: 10% 0 0 0;
+                padding: 10vh 0 0 0;
             }
         }
 
@@ -131,8 +126,6 @@
             z-index: 2;
         }
 
-
-
         /* 底圖 */
 
         .bv {
@@ -152,7 +145,7 @@
 
         @media screen and (min-width:768px) {
             .bv {
-                height: 600%;
+                height: 330%;
                 overflow: hidden;
             }
         }
@@ -160,84 +153,6 @@
         .bv img {
             width: 100%;
         }
-
-        /* 搜尋欄 */
-
-        .search-bar {
-            width: 99%;
-            position: relative;
-            padding:0;
-        }
-
-        .search-bar input {
-            padding: 14px 0px 14px 25px;
-            border: 1px solid #ddd;
-            background-color: #ffffff;
-            border-radius: 10px;
-            width: 99%;
-        }
-
-        @media screen and (max-width:768px) {
-            .header-search {
-                display: none;
-            }
-            .search-bar input {
-                width: 90%;
-               
-            }
-            .search-bar{
-                width: 95%;
-                 padding: 20px 0 20px 20px ;
-                 margin: 0 auto;
-            }
-        }
-
-        @media screen and (min-width:768px) {
-            .main-search {
-                display: none;
-            }
-
-            .header-search {
-                position: absolute;
-                padding: 18% 25% 0;
-                width: 50%;
-            }
-
-            .search-bar input {
-                outline: none;
-                 width: 99%;
-            }
-        }
-
-        .search-bar .map {
-            width:20px;
-            position: absolute;
-            left: 5px;
-            top: 9px;
-        }
-
-        .search-bar .search {
-            width: 30px;
-            position: absolute;
-            right: -10px;
-            top: 8px;
-        }
-@media screen and (max-width:768px) {
-    .search-bar .map {
-            width:20px;
-            position: absolute;
-            left: 25px;
-            top: 28px;
-        }
-
-        .search-bar .search {
-            width: 30px;
-            position: absolute;
-            right: 7%;
-            top: 28px;
-        }
-}
-    
     </style>
 </head>
 
@@ -246,10 +161,10 @@
     <header class="main-header">
         <div class="bv"><img src="foodmap/banner.jpg"></div>
         <div class="logo">
-            <a href="https://jp6bj3.github.io/foodmap/Mockup/index2.html">
+            <a href="#">
                 <img src="foodmap/logo.png">
         </div></a>
-        <div class="phone"><a href="https://jp6bj3.github.io/foodmap/Mockup/APP2.html">下載APP</a></div>
+        <div class="phone"><a href="#">下載APP</a></div>
         <label class="hb" for="switch">
             <span></span>
             <span></span>
@@ -262,42 +177,14 @@
             <a href="#">登入</a>
             <a href="#">註冊</a>
         </div>
-        <div class="section-search header-search">
-            <div class="search-bar">
-                <input type="text" placeholder=" 搜尋餐廳...">
-                <img class="search" src="foodmap/magnifying-glass-solid.svg" alt="">
-                <img class="map" src="foodmap/location-dot-solid.svg" alt="">
-            </div>
-        </div>
+
     </header>
     <main>
-        <div class="section-search main-search">
-            <div class="search-bar">
-                <input type="text" placeholder=" 搜尋餐廳...">
-                <img class="search" src="foodmap/magnifying-glass-solid.svg" alt="">
-                <img class="map" src="foodmap/location-dot-solid.svg" alt="">
-            </div>
+
+
         </div>
-       
+
     </main>
-    
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 4,
-            centeredSlides: false, // 將這個設為 false
-            slidesOffsetBefore: 0, // 加入這一行
-            spaceBetween: 0,
-            grabCursor: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-    </script>
 </body>
-
 
 </html>

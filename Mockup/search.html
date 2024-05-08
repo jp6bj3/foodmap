@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/font.css">
+   <style>
+    /* .section */
+        .section{
+            padding: 20px auto;}
+        @media screen and (max-width:768px) {
+            .section{padding: 10px;}}
+
+    /* .section-search */
+        .section-search {
+            display: flex;
+            flex-direction: column;
+            align-items: center;            
+            padding:20vh 10% 0 10%;
+        }
+        @media screen and (max-width:768px) {
+            .section-search {
+                padding: 0;
+            }
+        }
+        .section-foodsort p {
+            padding: 20px;
+            font-size: 20px;
+        }
+        @media screen and (max-width:768px) {
+            .section-foodsort p {
+            font-size: 16px;
+            }
+        }
+    /* tab */
+        .tab-pane {
+            display: none;
+        }
+        .tab-pane.active {
+        display: block;
+        }
+            /* border-style: 0,0,0, 1px solid #ff6a00; */
+        .tab-button{
+            background-color: #fff;
+            border-style:none;
+        }
+        .tab-button:hover{
+            background-color: #b3b3b3;
+        }
+        .tab-button.active {
+        border-bottom: 3px solid #FFBA51; /* 底線顏色可自行調整 */
+        }
+   </style>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="switch">
+    <header class="main-header">
+        <div class="bv"><img src="foodmap/banner.jpg"></div>
+        <div class="logo">
+            <a href="#">
+                <img src="foodmap/logo.png">
+        </div></a>
+        <div class="phone"><a href="#">下載APP</a></div>
+        <label class="hb" for="switch">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="main-nav">
+            <a href="#">添加餐廳</a>
+            <a href="#">商家</a>
+            <a href="#">登入</a>
+            <a href="#">註冊</a>
+        </div>
+
+    </header>
+    <main>
+        <div class="section section-search">
+            <div class="section section-foodsort tabs">
+                <button class="tab-button active" data-tab="tab1">
+                    <p>咖啡廳</p>
+                </button>
+                <button class="tab-button" data-tab="tab2">
+                    <p>早午餐</p>
+                </button>
+                <button class="tab-button" data-tab="tab3">
+                    <p>連鎖咖啡廳</p>
+                </button>
+            </div>
+            <input type="text">
+            <div class="secarch-title"><h2>中山區咖啡廳</h2></div>
+        </div>
+
+<div class="section section-restaurant tab-content">
+    <div class="container">
+        <div class="tab-pane active" id="tab1">
+            
+        </div>
+        <div class="tab-pane" id="tab2">
+           
+        </div>
+        <div class="tab-pane" id="tab3">
+            
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 隱藏所有分頁內容
+                tabPanes.forEach(pane => {
+                    pane.classList.remove('active');
+                });
+
+                // 移除所有按鈕上的 active 類
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+
+                // 顯示對應的分頁內容
+                const targetPane = document.getElementById(button.dataset.tab);
+                targetPane.classList.add('active');
+
+                // 為按鈕添加 active 類
+                button.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

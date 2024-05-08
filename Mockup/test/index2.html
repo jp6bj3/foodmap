@@ -14,7 +14,12 @@
             overflow: hidden;
         } */
 
-     
+       .section{
+            margin: 0 auto;  
+            max-width: 1200px;
+                        overflow: hidden;
+
+        }
         /* .section-eat,
         .section-foodsort,
         .section-swipercard,
@@ -25,7 +30,7 @@
         } */
 
 
-/* hb */
+
         .main-header {
             display: flex;
             justify-content: space-between;
@@ -103,9 +108,9 @@
             .main-header .main-nav {
                 display: none;
                 position: absolute;
-                background-color: rgba(0, 0, 0, 0.928);
+                background-color: rgb(0, 0, 0);
                 top: 100%;
-                right: 0;
+                /* right: 0; */
                 width: 100%;
             }
         }
@@ -121,31 +126,31 @@
                 top: auto;
                 width: auto;
                 background-color: transparent;
+                right: 5%;
             }
         }
-        
 
         .main-header .main-nav a {
             display: block;
             /* 佔滿整排 */
-            padding: 20px;
-            /* width: 70px; */
+            padding: 10px;
+            width: 70px;
             text-align: center;
             text-decoration: none;
             /* 底線消失 */
             color: aliceblue;
         }
-          @media screen and (max-width:768px) {
-            .main-header .main-nav a+a {
-                border-top: 1px solid #fff;
-                /* A後面的A 加上TOP線 */
-            }
-        }
+
+       
+
         #switch:checked~.main-header .main-nav {
             display: block;
-             z-index: 15;
-             
         }
+        .main-header .main-nav ul{
+        z-index: 10;
+        }
+   
+
 
         /* 底圖 */
 
@@ -235,7 +240,7 @@
         .search-bar .search {
             width: 30px;
             position: absolute;
-            right: 0;
+            right: -7%;
             top: 8px;
         }
 
@@ -254,9 +259,7 @@
             }
         }
 
-        .container {
-            max-width:900px;
-        }
+        .container {}
 
 
         @media screen and (max-width:768px) {
@@ -367,10 +370,8 @@
         .section-swipercard-map {
             display: flex;
             flex-direction: row;
-            padding: 5vh;
-            margin: 0 auto;  
-            max-width: 850px;
-                        overflow: hidden;
+            padding: 5vh 10%;
+            /* max-width: 900px; */
         }
 
         .card-map {
@@ -384,7 +385,8 @@
             }
 
             .section-swipercard-map {
-padding: 0 20px 0 0;
+                padding-left: 0;
+
             }
         }
 
@@ -522,18 +524,17 @@ padding: 0 20px 0 0;
         }
 
         /* 使用者 */
-       
         .section-swipercard-user .row {
             flex-wrap: nowrap;
-            
         }
-.container-user{
-    max-width: 850px;
-    overflow: hidden;
-}
-        
+
+        /* .section-swipercard-user {
+            max-width: 1200px;
+            overflow: hidden;
+        } */
+
         .section-swipercard-user h2 {
-            padding: 20px 0;
+            padding: 20px;
             font-size: 24px;
         }
 
@@ -602,7 +603,6 @@ padding: 0 20px 0 0;
         .card-user-p {
             padding: 15px;
             text-align: center;
-            width: 175px;
         }
 
         .card-user-icon {
@@ -680,7 +680,7 @@ padding: 0 20px 0 0;
       
 
         .card-downloadapp {
-            padding: 50px 0 ;
+            /* padding: 5vh 5vw 0 0; */
         }
 
         @media screen and (min-width:768px) {
@@ -806,60 +806,58 @@ padding: 0 20px 0 0;
             </div>
         </div>
         <div class="section section-swipercard-map">
-            
-                <div class="card-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3640.40605792089!2d120.6652766!3d24.1574881!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d78069134cb%3A0xd440a632b89ece36!2z5ZyL56uL6Ieq54S256eR5a245Y2a54mp6aSo5qSN54mp5ZyS!5e0!3m2!1szh-TW!2stw!4v1713309623508!5m2!1szh-TW!2stw"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="container container-swipercard">
-                    <h2>精選食評</h2>
-                    <div class="container mySwiper">
-                        <div class="row swiper-wrapper">
-                            <div class="col swiper-slide">
-                                <div class="swiper-foodreview">
-                                    <a href="https://jp6bj3.github.io/foodmap/Mockup/foodreview"><img class="swipercard-pic"
-                                            src="foodmap/swiper-foodreview1.png"></a>
-                                    <div class="swipercard-tab">
-                                    </div>
+            <div class="card-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3640.40605792089!2d120.6652766!3d24.1574881!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d78069134cb%3A0xd440a632b89ece36!2z5ZyL56uL6Ieq54S256eR5a245Y2a54mp6aSo5qSN54mp5ZyS!5e0!3m2!1szh-TW!2stw!4v1713309623508!5m2!1szh-TW!2stw"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="container container-swipercard">
+                <h2>精選食評</h2>
+                <div class="container mySwiper">
+                    <div class="row swiper-wrapper">
+                        <div class="col swiper-slide">
+                            <div class="swiper-foodreview">
+                                <a href="https://jp6bj3.github.io/foodmap/Mockup/foodreview"><img class="swipercard-pic"
+                                        src="foodmap/swiper-foodreview1.png"></a>
+                                <div class="swipercard-tab">
                                 </div>
                             </div>
-                            <div class="col swiper-slide">
-                                <div class="swiper-foodreview">
-                                    <img class="swipercard-pic" src="foodmap/swiper-foodreview2.png">
-                                    <div class="swipercard-tab">
-                                    </div>
+                        </div>
+                        <div class="col swiper-slide">
+                            <div class="swiper-foodreview">
+                                <img class="swipercard-pic" src="foodmap/swiper-foodreview2.png">
+                                <div class="swipercard-tab">
                                 </div>
                             </div>
-                            <div class="col swiper-slide">
-                                <div class="swiper-foodreview">
-                                    <img class="swipercard-pic" src="foodmap/swiper-foodreview3.png">
-                                    <div class="swipercard-tab">
-                                    </div>
+                        </div>
+                        <div class="col swiper-slide">
+                            <div class="swiper-foodreview">
+                                <img class="swipercard-pic" src="foodmap/swiper-foodreview3.png">
+                                <div class="swipercard-tab">
                                 </div>
                             </div>
-                            <div class="col swiper-slide">
-                                <div class="swiper-foodreview">
-                                    <img class="swipercard-pic" src="foodmap/swiper-foodreview4.png">
-                                    <div class="swipercard-tab">
-                                    </div>
+                        </div>
+                        <div class="col swiper-slide">
+                            <div class="swiper-foodreview">
+                                <img class="swipercard-pic" src="foodmap/swiper-foodreview4.png">
+                                <div class="swipercard-tab">
                                 </div>
                             </div>
-                            <div class="col swiper-slide">
-                                <div class="swiper-foodreview">
-                                    <img class="swipercard-pic" src="foodmap/swiper-foodreview5.png">
-                                    <div class="swipercard-tab">
-                                    </div>
+                        </div>
+                        <div class="col swiper-slide">
+                            <div class="swiper-foodreview">
+                                <img class="swipercard-pic" src="foodmap/swiper-foodreview5.png">
+                                <div class="swipercard-tab">
                                 </div>
+                            </div>
 
-                            </div>
                         </div>
                     </div>
                 </div>
-            <div class="swiper-pagination"></div>
             </div>
-       
+            <div class="swiper-pagination"></div>
+        </div>
         <div class="section section-eat">
             <div class="container container-eat">
                 <div class="row row-cols-1 row-cols-md-1">
@@ -923,7 +921,7 @@ padding: 0 20px 0 0;
             </div>
         </div>
         <div class="section section-swipercard-user">
-            <div class="container container-swipercard container-user">
+            <div class="container container-swipercard">
                 <h2>推薦部落客</h2>
                 <div class="container mySwiper">
                     <div class="row swiper-wrapper">
