@@ -560,7 +560,6 @@ padding: 0 20px 0 0;
             
         }
 .container-user{
-    max-width: 850px;
     overflow: hidden;
 }
         
@@ -651,7 +650,7 @@ padding: 0 20px 0 0;
 
         /* 新品 */
         .section-swipercard-new {
-            padding-bottom: 15vh;
+            padding-bottom: 50px;
         }
 
         .section-swipercard-new h2 {
@@ -668,10 +667,10 @@ padding: 0 20px 0 0;
             display: flex;
             flex-direction: column;
             width: 175px;
-            /* padding-right: 10px; */
             position: relative;
             z-index: 1;
-            
+            overflow: hidden;
+            border-radius: 10px 10px 10px 10px;
         }
 
 
@@ -689,20 +688,26 @@ padding: 0 20px 0 0;
 
         }
         .swipercard:hover img {
-            scale: 105%;
+            opacity: .5;
         }
-
+        .swipercard:hover {
+            background-color: #fff;
+        }
 
         .swipercard .swipercard-tab {
             position: absolute;
-            left: -50%;
-            top: 50%;
-            z-index: 4;
+             z-index: 4;
+             top: -10px;
+             padding: 30% 45%;
         }
 
-        .swipercard h3 {
-            color: #ffffff;
-        }
+.swipercard h3{
+ color: #ffffff;
+ padding: 5px 2px;
+ background: #000;
+ border-radius: 5px;
+}
+        
 
         /* 下載app */
         .section-downloadappB {
@@ -786,7 +791,8 @@ padding: 0 20px 0 0;
         <div class="section-search header-search">
             <div class="search-bar">
                 <input type="text" placeholder=" 搜尋餐廳...">
-                <img class="search" src="foodmap/magnifying-glass-solid.svg" alt="">
+                <a href="https://jp6bj3.github.io/foodmap/Mockup/search.html"><img class="search"
+                        src="foodmap/magnifying-glass-solid.svg" alt=""></a>
                 <img class="map" src="foodmap/location-dot-solid.svg" alt="">
             </div>
         </div>
@@ -795,7 +801,8 @@ padding: 0 20px 0 0;
         <div class="section-search main-search">
             <div class="search-bar">
                 <input type="text" placeholder=" 搜尋餐廳...">
-                <img class="search" src="foodmap/magnifying-glass-solid.svg" alt="">
+            <a href="https://jp6bj3.github.io/foodmap/Mockup/search.html"><img class="search"
+                    src="foodmap/magnifying-glass-solid.svg" alt=""></a>
                 <img class="map" src="foodmap/location-dot-solid.svg" alt="">
             </div>
         </div>
@@ -959,20 +966,6 @@ padding: 0 20px 0 0;
                 <h2>推薦部落客</h2>
                 <div class="container mySwiper">
                     <div class="row swiper-wrapper">
-                        <div class="col swiper-slide card-user">
-                                <img class="card-user-pic" src="https://picsum.photos/300/200/?random=10">
-                                <div class="card-user-icon"><img src="foodmap/usericon.png" alt=""></div>
-                                <div class="card-user-p">
-                                    <p>部落客A</p>
-                                    <p>台中咖啡廳</p>
-                                </div>
-                                <div class="user-btn">
-                                    <p>追蹤</p>
-                                </div>
-                                <div class="card-user-tab">
-                                    <h3>人氣王</h3>
-                                </div>
-                        </div>
                         <div class="col swiper-slide">
                             <div class="card-user">
                                 <img class="card-user-pic" src="https://picsum.photos/300/200/?random=12">
@@ -1109,22 +1102,22 @@ padding: 0 20px 0 0;
                                 </div>
                             </div>
                         </div>
-                        <div class="col swiper-slide">
-                            <div class="swipercard">
-                                <img class="swipercard-pic" src="foodmap/swipercard6.jpg">
-                                <div class="swipercard-tab">
-                                    <h3>title</h3>
-                                </div>
+                    <div class="col swiper-slide">
+                        <div class="swipercard">
+                            <img class="swipercard-pic" src="foodmap/swipercard1.jpg">
+                            <div class="swipercard-tab">
+                                <h3>中式餃子</h3>
                             </div>
                         </div>
-                        <div class="col swiper-slide">
-                            <div class="swipercard">
-                                <img class="swipercard-pic" src="https://picsum.photos/300/200/?random=10">
-                                <div class="swipercard-tab">
-                                    <h3>title</h3>
-                                </div>
+                    </div>
+                    <div class="col swiper-slide">
+                        <div class="swipercard">
+                            <img class="swipercard-pic" src="foodmap/swipercard5.jpg">
+                            <div class="swipercard-tab">
+                                <h3>生吐司</h3>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -1148,8 +1141,8 @@ padding: 0 20px 0 0;
                                 </p>
                             </div>
                             <a class="btn" href="#">
-                                <img src="https://fakeimg.pl/80x30/200">
-                                <img src="https://fakeimg.pl/80x30/200">
+                                <img src="foodmap/app-ios.png">
+                                <img src="foodmap/app-google.png">
                             </a>
                         </div>
                     </div>
