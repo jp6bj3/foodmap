@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/font.css">
    <style>
+    .list-page a{
+        text-decoration: none;
+    }
     /* .section */
         .section{
             padding: 20px auto;}
@@ -26,7 +29,12 @@
         @media screen and (max-width:768px) {
             .section-search {
                 padding: 0;
+                align-items:normal;
             }
+             .section-search h2{
+                text-align: center;
+                font-size: 20px;
+             }
         }
         .section-foodsort p {
             padding: 20px;
@@ -54,6 +62,290 @@
         }
         .tab-button.active {
         border-bottom: 3px solid #FFBA51; /* 底線顏色可自行調整 */
+        }
+        /* search-bar */
+          .search-bar {
+            width: 99%;
+            position: relative;
+            padding:0;
+        }
+
+        .search-bar input {
+            padding: 14px 0px 14px 25px;
+            border: 1px solid #ddd;
+            background-color: #ffffff;
+            border-radius: 10px;
+            width: 99%;
+        }
+
+        @media screen and (max-width:768px) {
+            .header-search {
+                display: none;
+            }
+            .search-bar input {
+                width: 90%;
+               
+            }
+            .search-bar{
+                width: 95%;
+                 padding: 20px 0 20px 20px ;
+                 margin: 0 auto;
+            }
+             .search-bar img{
+            color: #ffffff;
+        }
+        }
+
+        @media screen and (min-width:768px) {
+            .main-search {
+                display: none;
+            }
+
+            .header-search {
+                position: absolute;
+            }
+
+            .search-bar input {
+                outline: none;
+                 width: 99%;
+            }
+        }
+
+        .search-bar .map {
+            width:20px;
+            position: absolute;
+            left: 5px;
+            top: 9px;
+        }
+
+        .search-bar .search {
+            width: 30px;
+            position: absolute;
+            right: -10px;
+            top: 8px;
+        }
+@media screen and (max-width:768px) {
+    .search-bar .map {
+            width:20px;
+            position: absolute;
+            left: 25px;
+            top: 28px;
+        }
+
+        .search-bar .search {
+            width: 30px;
+            position: absolute;
+            right: 7%;
+            top: 28px;
+        }
+       
+}
+ @media screen and (min-width:768px) {
+            .header-search {
+                position: absolute;
+                padding: 80px 0 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: 500px;
+            }
+        }
+        /* secarch-title */
+        .secarch-title{
+            padding: 75px 0 20px 0 ;
+        }
+        .secarch-title h2 {
+            font-size: 24px;
+        }
+        @media screen and (max-width:768px) {
+             .secarch-title{
+                padding: 0 0 20px 0;
+             }
+        }
+        /* section-restaurant */
+        .section-restaurant{
+            height: 800px;
+            background-color: #F2F2F2;
+        }
+        /* tab */
+        .restaurant-tab{
+            display: flex;
+            flex-direction: column;  
+            align-items: center;      }
+        .restaurant-main{
+            display: flex;
+            flex-direction:row;
+        }
+        
+        /* filters */
+         .shop-filters {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            }
+
+            .filter-group {
+            margin-bottom: 20px;
+            }
+
+            .filter-group h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            }
+
+            .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            }
+
+            .checkbox-item {
+            margin-right: 16px;
+            margin-bottom: 8px;
+            }
+
+            .checkbox-item input[type="checkbox"] {
+            margin-right: 8px;
+            }
+
+            .checkbox-item label {
+            font-size: 14px;
+            color: #555;
+            }
+            
+
+            /* main-filters */
+            .main-filters{
+                padding: 10px;
+            }
+            @media screen and (max-width:768px) {
+                .main-filters{
+                    display: none;
+                }
+            }
+            /* main-list */
+            .main-list{
+                display: flex;
+                flex-direction: column;
+            }
+            /* 卡片 */
+            .restaurant-card {
+            display: flex;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+                flex-wrap: wrap;
+                min-width: 300px;
+                margin: 10px 0;
+            }
+
+            .restaurant-image{
+            height: 200px;
+            object-fit: cover;
+            overflow: hidden;
+            }
+            @media screen and (min-width: 768px) {
+                .restaurant-image{
+                width: 210px;
+            overflow:revert;}
+            }
+
+            .restaurant-image img {
+            width: 100%;
+            
+            }
+
+            .restaurant-info {
+            padding: 20px;
+            }
+
+            .restaurant-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            }
+
+            .restaurant-address {
+            color: #666666;
+            margin-bottom: 4px;
+            }
+
+            .restaurant-visitors {
+            color: #666666;
+            margin-bottom: 12px;
+            }
+
+            .restaurant-tags {
+            margin-bottom: 12px;
+            }
+/* page */
+.list-page{
+    padding: 5px;
+}
+.list-page ul{
+   display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center; 
+    gap: 10px;
+} 
+.list-page li{
+    padding:10px 15px;
+    font-size: 20px;
+     background-color: #ffffff;
+    color: #000;
+    border-radius: 50%;
+}
+.list-page a:first-child li{
+    background-color: #FFBA51;
+    color: #fff;
+}
+        .tag {
+        /* background-color: #ff8102; */
+        border: 1px solid #FFBA51;
+        color: #000000;
+        padding: 4px 8px;
+        border-radius: 5px;
+        font-size: 12px;
+        margin-right: 8px;
+        }
+
+        .restaurant-ratings {
+        display: flex;
+        }
+
+        .rating {
+        margin-right: 16px;
+        }
+
+        .rating-label {
+        color: #666666;
+        font-size: 14px;
+        margin-right: 4px;
+        }
+
+        .rating-value {
+        font-weight: bold;
+        margin-right: 4px;
+        }
+
+        .rating-count {
+        color: #666666;
+        font-size: 12px;
+        }
+  /* footer */
+        .section-downloadappfooter {
+            padding: 20px 0 20px 0;
+            text-align: center;
+        }
+
+        @media screen and (min-width:768px) {
+            .section-downloadappfooter {
+                /* padding: 80px 0 20px 0; */
+                text-align: center;
+            }
         }
    </style>
 </head>
@@ -94,14 +386,163 @@
                     <p>連鎖咖啡廳</p>
                 </button>
             </div>
-            <input type="text">
-            <div class="secarch-title"><h2>中山區咖啡廳</h2></div>
+        <div class="section-search header-search">
+            <div class="search-bar">
+                <input type="text" placeholder=" 搜尋餐廳...">
+                <img class="search" src="foodmap/magnifying-glass-solid.svg" alt="">
+                <img class="map" src="foodmap/location-dot-solid.svg" alt="">
+            </div>
+        </div>  
+        <div class="section-search main-search">
+            <div class="search-bar">
+                <input type="text" placeholder=" 搜尋餐廳...">
+                <img class="search" src="foodmap/magnifying-glass-solid.svg" alt="">
+                <img class="map" src="foodmap/location-dot-solid.svg" alt="">
+            </div>
         </div>
-
+        <div class="secarch-title"><h2>中山區咖啡廳</h2></div>
+        </div>
 <div class="section section-restaurant tab-content">
     <div class="container">
         <div class="tab-pane active" id="tab1">
-            
+            <div class="restaurant-tab">
+                <div class="restaurant-main">
+                    <div class="main-filters">
+                        <div class="filters-map"></div>
+                        <div class="shop-filters">
+                            <div class="filter-group">
+                                <h3>餐廳類型</h3>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="cafes" name="property-type">
+                                        <label for="cafes">咖啡廳</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="dessert-shop" name="property-type">
+                                        <label for="dessert-shop">甜點店</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="afternoon-tea" name="property-type">
+                                        <label for="afternoon-tea">下午茶</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="cake shop" name="property-type">
+                                        <label for="cake shop">蛋糕店</label>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="filter-group">
+                                <h3>價格範圍</h3>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="price-1" name="price-range">
+                                        <label for="price-1">$0 - $500</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="price-2" name="price-range">
+                                        <label for="price-2">$500 - $1000</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="price-3" name="price-range">
+                                        <label for="price-3">$1000 - $1500</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="price-4" name="price-range">
+                                        <label for="price-4">$1500+</label>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="filter-group">
+                                <h3>服務</h3>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="delivery" name="delivery">
+                                        <label for="delivery">外送</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="internal-use" name="internal-use">
+                                        <label for="internal-use">內用</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="order-online" name="order-online">
+                                        <label for="order-online">線上訂購</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-list">
+                        <div class="list-restaurant"></div>
+                        <div class="list-cardlist">
+                            <div class="restaurant-card">
+                                <div class="restaurant-image">
+                                    <img src="foodmap/img (16).jpg" alt="Instil Coffee">
+                                </div>
+                                <div class="restaurant-info">
+                                    <h2 class="restaurant-name">Instil Coffee</h2>
+                                    <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
+                                    <p class="restaurant-visitors">14,070人有過</p>
+                                    <div class="restaurant-tags">
+                                        <span class="tag">#中山區咖啡廳</span>
+                                        <span class="tag">#咖啡廳</span>
+                                        <span class="tag">#中山區Top10</span>
+                                    </div>
+                                    <div class="restaurant-ratings">
+                                        <div class="rating">
+                                            <span class="rating-label">內用</span>
+                                            <span class="rating-value">4.1</span>
+                                            <span class="rating-count">23則評論</span>
+                                        </div>
+                                        <div class="rating">
+                                            <span class="rating-label">外送</span>
+                                            <span class="rating-value">4.5</span>
+                                            <span class="rating-count">34則評論</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="restaurant-card">
+                                <div class="restaurant-image">
+                                    <img src="foodmap/img (16).jpg" alt="Instil Coffee">
+                                </div>
+                                <div class="restaurant-info">
+                                    <h2 class="restaurant-name">Instil Coffee</h2>
+                                    <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
+                                    <p class="restaurant-visitors">14,070人有過</p>
+                                    <div class="restaurant-tags">
+                                        <span class="tag">#中山區咖啡廳</span>
+                                        <span class="tag">#咖啡廳</span>
+                                        <span class="tag">#中山區Top10</span>
+                                    </div>
+                                    <div class="restaurant-ratings">
+                                        <div class="rating">
+                                            <span class="rating-label">內用</span>
+                                            <span class="rating-value">4.1</span>
+                                            <span class="rating-count">23則評論</span>
+                                        </div>
+                                        <div class="rating">
+                                            <span class="rating-label">外送</span>
+                                            <span class="rating-value">4.5</span>
+                                            <span class="rating-count">34則評論</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-page">
+                            <ul>
+                               <a href="#"><li>1</li></a>
+                                <a href="#"><li>2</li></a>
+                                <a href="#"><li>3</li></a>
+                            </ul></div>
+                    </div>
+                </div>
+                <div class="other-stores">
+
+                </div>
+            </div>
         </div>
         <div class="tab-pane" id="tab2">
            
@@ -111,7 +552,12 @@
         </div>
     </div>
 </div>
+<footer>
+    <div class="section section-downloadappfooter">
 
+        <p>中文(台灣) © 2024 from 111</p>
+    </div>
+</footer>
     </main>
 
     <script>
