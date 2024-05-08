@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/swiper-eat.css">
+    <link rel="stylesheet" href="css/post.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
    <style>
     .list-page a{
         text-decoration: none;
@@ -63,6 +68,7 @@
         .tab-button.active {
         border-bottom: 3px solid #FFBA51; /* 底線顏色可自行調整 */
         }
+
         /* search-bar */
           .search-bar {
             width: 99%;
@@ -163,7 +169,6 @@
         }
         /* section-restaurant */
         .section-restaurant{
-            height: 800px;
             background-color: #F2F2F2;
         }
         /* tab */
@@ -335,6 +340,119 @@
         color: #666666;
         font-size: 12px;
         }
+  
+        .tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+ .card-ad {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+      padding: 10px 0;
+      margin: 10px 0;
+  }
+
+  .card-ad h3 {
+      font-size: 20px;
+      padding: 8px 0;
+  }
+
+  .card-ad .ad-pic {
+      overflow: hidden;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+  }
+
+  .ad-pic img {
+      width: 100%;
+  }
+
+  .card-ad>p {
+      padding: 8px 0;
+  }
+
+  .score {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+
+  .score>p {
+      padding: 0 5px 5px;
+      font-size: 14px;
+  }
+  .swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: var(--swiper-navigation-top-offset, 50%);
+   width: 50px; 
+    height: 50px;
+  }
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 0;
+  }
+  .star .material-symbols-outlined {
+      position: absolute;
+      position: absolute;
+      top: 5px;
+      left: 35px;
+      color: #fff;
+      font-size: 20px;
+      font-variation-settings:
+          'FILL' 1,
+          'wght' 500,
+          'GRAD' 0,
+          'opsz' 12;
+  }
+
+  .star {
+      background-color: #fa0;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+      border-radius: 5px;
+      position: relative;
+  }
+
+  .star p {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      color: #fff;
+  }
+  .list-shop{
+overflow: hidden;  }
+@media screen and (max-width:900px) {
+    .swiper-button-prev {
+        display: none;
+    }
+        .swiper-button-next {
+        display: none;
+    }
+        .swiper-pagination-bullet {
+        display: none;    }
+        .swiper{
+            left: 20px;
+            width: 700px;
+            animation: 2s;
+        }
+}
+.swiper-pagination {
+      bottom: 0;
+      /* 距離按鈕位置 */
+  }
+
+  .swiper-pagination-bullet {
+      background: #FFBA51;
+      width: 20%;
+      height: 5px;
+      border-radius: 5px;
+  }
   /* footer */
         .section-downloadappfooter {
             padding: 20px 0 20px 0;
@@ -355,7 +473,7 @@
     <header class="main-header">
         <div class="bv"><img src="foodmap/banner.jpg"></div>
         <div class="logo">
-            <a href="#">
+            <a href="https://jp6bj3.github.io/foodmap/Mockup/index2.html">
                 <img src="foodmap/logo.png">
         </div></a>
         <div class="phone"><a href="#">下載APP</a></div>
@@ -402,164 +520,895 @@
         </div>
         <div class="secarch-title"><h2>中山區咖啡廳</h2></div>
         </div>
-<div class="section section-restaurant tab-content">
-    <div class="container">
-        <div class="tab-pane active" id="tab1">
-            <div class="restaurant-tab">
-                <div class="restaurant-main">
-                    <div class="main-filters">
-                        <div class="filters-map"></div>
-                        <div class="shop-filters">
-                            <div class="filter-group">
-                                <h3>餐廳類型</h3>
-                                <div class="checkbox-group">
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="cafes" name="property-type">
-                                        <label for="cafes">咖啡廳</label>
+        <div class="section section-restaurant tab-content">
+            <div class="container">
+                <div class="tab-pane active" id="tab1">
+                    <div class="restaurant-tab">
+                        <div class="restaurant-main">
+                            <div class="main-filters">
+                                <div class="filters-map"></div>
+                                <div class="shop-filters">
+                                    <div class="filter-group">
+                                        <h3>餐廳類型</h3>
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="cafes" name="property-type">
+                                                <label for="cafes">咖啡廳</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="dessert-shop" name="property-type">
+                                                <label for="dessert-shop">甜點店</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="afternoon-tea" name="property-type">
+                                                <label for="afternoon-tea">下午茶</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="cake shop" name="property-type">
+                                                <label for="cake shop">蛋糕店</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="dessert-shop" name="property-type">
-                                        <label for="dessert-shop">甜點店</label>
+                                
+                                    <div class="filter-group">
+                                        <h3>價格範圍</h3>
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="price-1" name="price-range">
+                                                <label for="price-1">$0 - $500</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="price-2" name="price-range">
+                                                <label for="price-2">$500 - $1000</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="price-3" name="price-range">
+                                                <label for="price-3">$1000 - $1500</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="price-4" name="price-range">
+                                                <label for="price-4">$1500+</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="afternoon-tea" name="property-type">
-                                        <label for="afternoon-tea">下午茶</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="cake shop" name="property-type">
-                                        <label for="cake shop">蛋糕店</label>
+                                
+                                    <div class="filter-group">
+                                        <h3>服務</h3>
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="delivery" name="delivery">
+                                                <label for="delivery">外送</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="internal-use" name="internal-use">
+                                                <label for="internal-use">內用</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="order-online" name="order-online">
+                                                <label for="order-online">線上訂購</label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        
-                            <div class="filter-group">
-                                <h3>價格範圍</h3>
-                                <div class="checkbox-group">
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="price-1" name="price-range">
-                                        <label for="price-1">$0 - $500</label>
+                            <div class="main-list">
+                                <div class="list-restaurant"></div>
+                                <div class="list-cardlist">
+                                    <div class="restaurant-card">
+                                        <div class="restaurant-image">
+                                            <img src="foodmap/img (53).jpg" alt="Instil Coffee">
+                                        </div>
+                                        <div class="restaurant-info">
+                                            <h2 class="restaurant-name">Instil Coffee</h2>
+                                            <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
+                                            <p class="restaurant-visitors">14,070人看過</p>
+                                            <div class="restaurant-tags">
+                                                <span class="tag">#中山區咖啡廳</span>
+                                                <span class="tag">#咖啡廳</span>
+                                                <span class="tag">#中山區Top10</span>
+                                            </div>
+                                        <div class="score">
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>內用<br>23則</p>
+                                            <span></span>
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>外帶<br>53則</p>
+                                        </div>
+                                        </div>
                                     </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="price-2" name="price-range">
-                                        <label for="price-2">$500 - $1000</label>
+                                    <div class="restaurant-card">
+                                        <div class="restaurant-image">
+                                            <img src="foodmap/img (93).jpg" alt="Instil Coffee">
+                                        </div>
+                                        <div class="restaurant-info">
+                                            <h2 class="restaurant-name">Instil Coffee</h2>
+                                            <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
+                                            <p class="restaurant-visitors">14,070人看過</p>
+                                            <div class="restaurant-tags">
+                                                <span class="tag">#中山區咖啡廳</span>
+                                                <span class="tag">#咖啡廳</span>
+                                                <span class="tag">#中山區Top10</span>
+                                            </div>
+                                            <div class="restaurant-ratings">
+                                            <div class="score">
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>內用<br>23則</p>
+                                                <span></span>
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>外帶<br>53則</p>
+                                            </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="price-3" name="price-range">
-                                        <label for="price-3">$1000 - $1500</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="price-4" name="price-range">
-                                        <label for="price-4">$1500+</label>
+                                    <div class="restaurant-card">
+                                        <div class="restaurant-image">
+                                            <img src="foodmap/img (34).jpg" alt="Instil Coffee">
+                                        </div>
+                                        <div class="restaurant-info">
+                                            <h2 class="restaurant-name">Instil Coffee</h2>
+                                            <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
+                                            <p class="restaurant-visitors">14,070人看過</p>
+                                            <div class="restaurant-tags">
+                                                <span class="tag">#中山區咖啡廳</span>
+                                                <span class="tag">#咖啡廳</span>
+                                                <span class="tag">#中山區Top10</span>
+                                            </div>
+                                            <div class="restaurant-ratings">
+                                                <div class="score">
+                                                    <div class="star"><span class="material-symbols-outlined">
+                                                            kid_star
+                                                        </span>
+                                                        <p>4.5</p>
+                                                    </div>
+                                                    <p>內用<br>23則</p>
+                                                    <span></span>
+                                                    <div class="star"><span class="material-symbols-outlined">
+                                                            kid_star
+                                                        </span>
+                                                        <p>4.5</p>
+                                                    </div>
+                                                    <p>外帶<br>53則</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        
-                            <div class="filter-group">
-                                <h3>服務</h3>
-                                <div class="checkbox-group">
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="delivery" name="delivery">
-                                        <label for="delivery">外送</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="internal-use" name="internal-use">
-                                        <label for="internal-use">內用</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <input type="checkbox" id="order-online" name="order-online">
-                                        <label for="order-online">線上訂購</label>
-                                    </div>
-                                </div>
+                                <div class="list-page">
+                                    <ul>
+                                    <a href="#"><li>1</li></a>
+                                        <a href="#"><li>2</li></a>
+                                        <a href="#"><li>3</li></a>
+                                    </ul></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="main-list">
-                        <div class="list-restaurant"></div>
-                        <div class="list-cardlist">
-                            <div class="restaurant-card">
-                                <div class="restaurant-image">
-                                    <img src="foodmap/img (16).jpg" alt="Instil Coffee">
-                                </div>
-                                <div class="restaurant-info">
-                                    <h2 class="restaurant-name">Instil Coffee</h2>
-                                    <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
-                                    <p class="restaurant-visitors">14,070人有過</p>
-                                    <div class="restaurant-tags">
-                                        <span class="tag">#中山區咖啡廳</span>
-                                        <span class="tag">#咖啡廳</span>
-                                        <span class="tag">#中山區Top10</span>
-                                    </div>
-                                    <div class="restaurant-ratings">
-                                        <div class="rating">
-                                            <span class="rating-label">內用</span>
-                                            <span class="rating-value">4.1</span>
-                                            <span class="rating-count">23則評論</span>
+                        <div class="list-shop container">
+                                <div class="swiper mySwiper-eat">
+                                    <div class="swiper-wrapper ad-list">
+                                        <div class="swiper-slide card-ad message">
+                                            <img src="foodmap/eat(3).jpg" alt="" class="ad-pic">
+                                            <h3 class="ad-h3">太陽蛋吐司</h3>
+                                            <div class="score">
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>內用<br>23則</p>
+                                                <span></span>
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>外帶<br>53則</p>
+                                            </div>
+                                            <p>大安區,步行5分鐘</p>
                                         </div>
-                                        <div class="rating">
-                                            <span class="rating-label">外送</span>
-                                            <span class="rating-value">4.5</span>
-                                            <span class="rating-count">34則評論</span>
+
+                                        <div class="swiper-slide card-ad message">
+                                            <img src="foodmap/img (31).jpg" alt="" class="ad-pic">
+                                            <h3 class="ad-h3">太陽蛋吐司</h3>
+                                            <div class="score">
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>內用<br>23則</p>
+                                                <span></span>
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>外帶<br>53則</p>
+                                            </div>
+                                            <p>大安區,步行5分鐘</p>
+                                        </div>
+                                        <div class="swiper-slide card-ad message">
+                                            <img src="foodmap/ad (1).jpg" alt="" class="ad-pic">
+                                            <h3 class="ad-h3">太陽蛋吐司</h3>
+                                            <div class="score">
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>內用<br>23則</p>
+                                                <span></span>
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>外帶<br>53則</p>
+                                            </div>
+                                            <p>大安區,步行5分鐘</p>
+                                        </div>
+                                        <div class="swiper-slide card-ad message">
+                                            <img src="foodmap/ad (2).jpg" alt="" class="ad-pic">
+                                            <h3 class="ad-h3">太陽蛋吐司</h3>
+                                            <div class="score">
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>內用<br>23則</p>
+                                                <span></span>
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>外帶<br>53則</p>
+                                            </div>
+                                            <p>大安區,步行5分鐘</p>
+                                        </div>
+                                        <div class="swiper-slide card-ad message">
+                                            <img src="foodmap/ad (3).jpg" alt="" class="ad-pic">
+                                            <h3 class="ad-h3">太陽蛋吐司</h3>
+                                            <div class="score">
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>內用<br>23則</p>
+                                                <span></span>
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>外帶<br>53則</p>
+                                            </div>
+                                            <p>大安區,步行5分鐘</p>
                                         </div>
                                     </div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
                                 </div>
-                            </div>
-                            <div class="restaurant-card">
-                                <div class="restaurant-image">
-                                    <img src="foodmap/img (16).jpg" alt="Instil Coffee">
-                                </div>
-                                <div class="restaurant-info">
-                                    <h2 class="restaurant-name">Instil Coffee</h2>
-                                    <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
-                                    <p class="restaurant-visitors">14,070人有過</p>
-                                    <div class="restaurant-tags">
-                                        <span class="tag">#中山區咖啡廳</span>
-                                        <span class="tag">#咖啡廳</span>
-                                        <span class="tag">#中山區Top10</span>
-                                    </div>
-                                    <div class="restaurant-ratings">
-                                        <div class="rating">
-                                            <span class="rating-label">內用</span>
-                                            <span class="rating-value">4.1</span>
-                                            <span class="rating-count">23則評論</span>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating-label">外送</span>
-                                            <span class="rating-value">4.5</span>
-                                            <span class="rating-count">34則評論</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="list-page">
-                            <ul>
-                               <a href="#"><li>1</li></a>
-                                <a href="#"><li>2</li></a>
-                                <a href="#"><li>3</li></a>
-                            </ul></div>
                     </div>
                 </div>
-                <div class="other-stores">
-
+                <div class="tab-pane" id="tab2">
+                <div class="restaurant-tab">
+                    <div class="restaurant-main">
+                        <div class="main-filters">
+                            <div class="filters-map"></div>
+                            <div class="shop-filters">
+                                <div class="filter-group">
+                                    <h3>餐廳類型</h3>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="cafes" name="property-type">
+                                            <label for="cafes">咖啡廳</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="dessert-shop" name="property-type">
+                                            <label for="dessert-shop">甜點店</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="afternoon-tea" name="property-type">
+                                            <label for="afternoon-tea">下午茶</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="cake shop" name="property-type">
+                                            <label for="cake shop">蛋糕店</label>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <div class="filter-group">
+                                    <h3>價格範圍</h3>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="price-1" name="price-range">
+                                            <label for="price-1">$0 - $500</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="price-2" name="price-range">
+                                            <label for="price-2">$500 - $1000</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="price-3" name="price-range">
+                                            <label for="price-3">$1000 - $1500</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="price-4" name="price-range">
+                                            <label for="price-4">$1500+</label>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <div class="filter-group">
+                                    <h3>服務</h3>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="delivery" name="delivery">
+                                            <label for="delivery">外送</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="internal-use" name="internal-use">
+                                            <label for="internal-use">內用</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="order-online" name="order-online">
+                                            <label for="order-online">線上訂購</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-list">
+                            <div class="list-restaurant"></div>
+                            <div class="list-cardlist">
+                                <div class="restaurant-card">
+                                    <div class="restaurant-image">
+                                        <img src="foodmap/img (33).jpg" alt="Instil Coffee">
+                                    </div>
+                                    <div class="restaurant-info">
+                                        <h2 class="restaurant-name">Instil Coffee</h2>
+                                        <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
+                                        <p class="restaurant-visitors">14,070人看過</p>
+                                        <div class="restaurant-tags">
+                                            <span class="tag">#中山區咖啡廳</span>
+                                            <span class="tag">#咖啡廳</span>
+                                            <span class="tag">#中山區Top10</span>
+                                        </div>
+                                        <div class="score">
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>內用<br>23則</p>
+                                            <span></span>
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>外帶<br>53則</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="restaurant-card">
+                                    <div class="restaurant-image">
+                                        <img src="foodmap/img (93).jpg" alt="Instil Coffee">
+                                    </div>
+                                    <div class="restaurant-info">
+                                        <h2 class="restaurant-name">Instil Coffee</h2>
+                                        <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
+                                        <p class="restaurant-visitors">14,070人看過</p>
+                                        <div class="restaurant-tags">
+                                            <span class="tag">#中山區咖啡廳</span>
+                                            <span class="tag">#咖啡廳</span>
+                                            <span class="tag">#中山區Top10</span>
+                                        </div>
+                                        <div class="restaurant-ratings">
+                                            <div class="score">
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>內用<br>23則</p>
+                                                <span></span>
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>外帶<br>53則</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="restaurant-card">
+                                    <div class="restaurant-image">
+                                        <img src="foodmap/img (34).jpg" alt="Instil Coffee">
+                                    </div>
+                                    <div class="restaurant-info">
+                                        <h2 class="restaurant-name">Instil Coffee</h2>
+                                        <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
+                                        <p class="restaurant-visitors">14,070人看過</p>
+                                        <div class="restaurant-tags">
+                                            <span class="tag">#中山區咖啡廳</span>
+                                            <span class="tag">#咖啡廳</span>
+                                            <span class="tag">#中山區Top10</span>
+                                        </div>
+                                        <div class="restaurant-ratings">
+                                            <div class="score">
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>內用<br>23則</p>
+                                                <span></span>
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>外帶<br>53則</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-page">
+                                <ul>
+                                    <a href="#">
+                                        <li>1</li>
+                                    </a>
+                                    <a href="#">
+                                        <li>2</li>
+                                    </a>
+                                    <a href="#">
+                                        <li>3</li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-shop container">
+                        <div class="swiper mySwiper-eat">
+                            <div class="swiper-wrapper ad-list">
+                                <div class="swiper-slide card-ad message">
+                                    <img src="foodmap/eat(3).jpg" alt="" class="ad-pic">
+                                    <h3 class="ad-h3">太陽蛋吐司</h3>
+                                    <div class="score">
+                                        <div class="star"><span class="material-symbols-outlined">
+                                                kid_star
+                                            </span>
+                                            <p>4.5</p>
+                                        </div>
+                                        <p>內用<br>23則</p>
+                                        <span></span>
+                                        <div class="star"><span class="material-symbols-outlined">
+                                                kid_star
+                                            </span>
+                                            <p>4.5</p>
+                                        </div>
+                                        <p>外帶<br>53則</p>
+                                    </div>
+                                    <p>大安區,步行5分鐘</p>
+                                </div>
+                
+                                <div class="swiper-slide card-ad message">
+                                    <img src="foodmap/img (31).jpg" alt="" class="ad-pic">
+                                    <h3 class="ad-h3">太陽蛋吐司</h3>
+                                    <div class="score">
+                                        <div class="star"><span class="material-symbols-outlined">
+                                                kid_star
+                                            </span>
+                                            <p>4.5</p>
+                                        </div>
+                                        <p>內用<br>23則</p>
+                                        <span></span>
+                                        <div class="star"><span class="material-symbols-outlined">
+                                                kid_star
+                                            </span>
+                                            <p>4.5</p>
+                                        </div>
+                                        <p>外帶<br>53則</p>
+                                    </div>
+                                    <p>大安區,步行5分鐘</p>
+                                </div>
+                                <div class="swiper-slide card-ad message">
+                                    <img src="foodmap/ad (1).jpg" alt="" class="ad-pic">
+                                    <h3 class="ad-h3">太陽蛋吐司</h3>
+                                    <div class="score">
+                                        <div class="star"><span class="material-symbols-outlined">
+                                                kid_star
+                                            </span>
+                                            <p>4.5</p>
+                                        </div>
+                                        <p>內用<br>23則</p>
+                                        <span></span>
+                                        <div class="star"><span class="material-symbols-outlined">
+                                                kid_star
+                                            </span>
+                                            <p>4.5</p>
+                                        </div>
+                                        <p>外帶<br>53則</p>
+                                    </div>
+                                    <p>大安區,步行5分鐘</p>
+                                </div>
+                                <div class="swiper-slide card-ad message">
+                                    <img src="foodmap/ad (2).jpg" alt="" class="ad-pic">
+                                    <h3 class="ad-h3">太陽蛋吐司</h3>
+                                    <div class="score">
+                                        <div class="star"><span class="material-symbols-outlined">
+                                                kid_star
+                                            </span>
+                                            <p>4.5</p>
+                                        </div>
+                                        <p>內用<br>23則</p>
+                                        <span></span>
+                                        <div class="star"><span class="material-symbols-outlined">
+                                                kid_star
+                                            </span>
+                                            <p>4.5</p>
+                                        </div>
+                                        <p>外帶<br>53則</p>
+                                    </div>
+                                    <p>大安區,步行5分鐘</p>
+                                </div>
+                                <div class="swiper-slide card-ad message">
+                                    <img src="foodmap/ad (3).jpg" alt="" class="ad-pic">
+                                    <h3 class="ad-h3">太陽蛋吐司</h3>
+                                    <div class="score">
+                                        <div class="star"><span class="material-symbols-outlined">
+                                                kid_star
+                                            </span>
+                                            <p>4.5</p>
+                                        </div>
+                                        <p>內用<br>23則</p>
+                                        <span></span>
+                                        <div class="star"><span class="material-symbols-outlined">
+                                                kid_star
+                                            </span>
+                                            <p>4.5</p>
+                                        </div>
+                                        <p>外帶<br>53則</p>
+                                    </div>
+                                    <p>大安區,步行5分鐘</p>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="tab-pane" id="tab3">
+                    <div class="restaurant-tab">
+                        <div class="restaurant-main">
+                            <div class="main-filters">
+                                <div class="filters-map"></div>
+                                <div class="shop-filters">
+                                    <div class="filter-group">
+                                        <h3>餐廳類型</h3>
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="cafes" name="property-type">
+                                                <label for="cafes">咖啡廳</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="dessert-shop" name="property-type">
+                                                <label for="dessert-shop">甜點店</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="afternoon-tea" name="property-type">
+                                                <label for="afternoon-tea">下午茶</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="cake shop" name="property-type">
+                                                <label for="cake shop">蛋糕店</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="filter-group">
+                                        <h3>價格範圍</h3>
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="price-1" name="price-range">
+                                                <label for="price-1">$0 - $500</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="price-2" name="price-range">
+                                                <label for="price-2">$500 - $1000</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="price-3" name="price-range">
+                                                <label for="price-3">$1000 - $1500</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="price-4" name="price-range">
+                                                <label for="price-4">$1500+</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="filter-group">
+                                        <h3>服務</h3>
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="delivery" name="delivery">
+                                                <label for="delivery">外送</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="internal-use" name="internal-use">
+                                                <label for="internal-use">內用</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="order-online" name="order-online">
+                                                <label for="order-online">線上訂購</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-list">
+                                <div class="list-restaurant"></div>
+                                <div class="list-cardlist">
+                                    <div class="restaurant-card">
+                                        <div class="restaurant-image">
+                                            <img src="foodmap/img (43).jpg" alt="Instil Coffee">
+                                        </div>
+                                        <div class="restaurant-info">
+                                            <h2 class="restaurant-name">Instil Coffee</h2>
+                                            <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
+                                            <p class="restaurant-visitors">14,070人看過</p>
+                                            <div class="restaurant-tags">
+                                                <span class="tag">#中山區咖啡廳</span>
+                                                <span class="tag">#咖啡廳</span>
+                                                <span class="tag">#中山區Top10</span>
+                                            </div>
+                                            <div class="score">
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>內用<br>23則</p>
+                                                <span></span>
+                                                <div class="star"><span class="material-symbols-outlined">
+                                                        kid_star
+                                                    </span>
+                                                    <p>4.5</p>
+                                                </div>
+                                                <p>外帶<br>53則</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="restaurant-card">
+                                        <div class="restaurant-image">
+                                            <img src="foodmap/img (93).jpg" alt="Instil Coffee">
+                                        </div>
+                                        <div class="restaurant-info">
+                                            <h2 class="restaurant-name">Instil Coffee</h2>
+                                            <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
+                                            <p class="restaurant-visitors">14,070人看過</p>
+                                            <div class="restaurant-tags">
+                                                <span class="tag">#中山區咖啡廳</span>
+                                                <span class="tag">#咖啡廳</span>
+                                                <span class="tag">#中山區Top10</span>
+                                            </div>
+                                            <div class="restaurant-ratings">
+                                                <div class="score">
+                                                    <div class="star"><span class="material-symbols-outlined">
+                                                            kid_star
+                                                        </span>
+                                                        <p>4.5</p>
+                                                    </div>
+                                                    <p>內用<br>23則</p>
+                                                    <span></span>
+                                                    <div class="star"><span class="material-symbols-outlined">
+                                                            kid_star
+                                                        </span>
+                                                        <p>4.5</p>
+                                                    </div>
+                                                    <p>外帶<br>53則</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="restaurant-card">
+                                        <div class="restaurant-image">
+                                            <img src="foodmap/img (34).jpg" alt="Instil Coffee">
+                                        </div>
+                                        <div class="restaurant-info">
+                                            <h2 class="restaurant-name">Instil Coffee</h2>
+                                            <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
+                                            <p class="restaurant-visitors">14,070人看過</p>
+                                            <div class="restaurant-tags">
+                                                <span class="tag">#中山區咖啡廳</span>
+                                                <span class="tag">#咖啡廳</span>
+                                                <span class="tag">#中山區Top10</span>
+                                            </div>
+                                            <div class="restaurant-ratings">
+                                                <div class="score">
+                                                    <div class="star"><span class="material-symbols-outlined">
+                                                            kid_star
+                                                        </span>
+                                                        <p>4.5</p>
+                                                    </div>
+                                                    <p>內用<br>23則</p>
+                                                    <span></span>
+                                                    <div class="star"><span class="material-symbols-outlined">
+                                                            kid_star
+                                                        </span>
+                                                        <p>4.5</p>
+                                                    </div>
+                                                    <p>外帶<br>53則</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-page">
+                                    <ul>
+                                        <a href="#">
+                                            <li>1</li>
+                                        </a>
+                                        <a href="#">
+                                            <li>2</li>
+                                        </a>
+                                        <a href="#">
+                                            <li>3</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-shop container">
+                            <div class="swiper mySwiper-eat">
+                                <div class="swiper-wrapper ad-list">
+                                    <div class="swiper-slide card-ad message">
+                                        <img src="foodmap/eat(3).jpg" alt="" class="ad-pic">
+                                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                                        <div class="score">
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>內用<br>23則</p>
+                                            <span></span>
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>外帶<br>53則</p>
+                                        </div>
+                                        <p>大安區,步行5分鐘</p>
+                                    </div>
+                    
+                                    <div class="swiper-slide card-ad message">
+                                        <img src="foodmap/img (31).jpg" alt="" class="ad-pic">
+                                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                                        <div class="score">
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>內用<br>23則</p>
+                                            <span></span>
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>外帶<br>53則</p>
+                                        </div>
+                                        <p>大安區,步行5分鐘</p>
+                                    </div>
+                                    <div class="swiper-slide card-ad message">
+                                        <img src="foodmap/ad (1).jpg" alt="" class="ad-pic">
+                                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                                        <div class="score">
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>內用<br>23則</p>
+                                            <span></span>
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>外帶<br>53則</p>
+                                        </div>
+                                        <p>大安區,步行5分鐘</p>
+                                    </div>
+                                    <div class="swiper-slide card-ad message">
+                                        <img src="foodmap/ad (2).jpg" alt="" class="ad-pic">
+                                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                                        <div class="score">
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>內用<br>23則</p>
+                                            <span></span>
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>外帶<br>53則</p>
+                                        </div>
+                                        <p>大安區,步行5分鐘</p>
+                                    </div>
+                                    <div class="swiper-slide card-ad message">
+                                        <img src="foodmap/ad (3).jpg" alt="" class="ad-pic">
+                                        <h3 class="ad-h3">太陽蛋吐司</h3>
+                                        <div class="score">
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>內用<br>23則</p>
+                                            <span></span>
+                                            <div class="star"><span class="material-symbols-outlined">
+                                                    kid_star
+                                                </span>
+                                                <p>4.5</p>
+                                            </div>
+                                            <p>外帶<br>53則</p>
+                                        </div>
+                                        <p>大安區,步行5分鐘</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="tab-pane" id="tab2">
-           
-        </div>
-        <div class="tab-pane" id="tab3">
-            
-        </div>
-    </div>
-</div>
-<footer>
-    <div class="section section-downloadappfooter">
 
-        <p>中文(台灣) © 2024 from 111</p>
-    </div>
-</footer>
     </main>
-
+    <footer>
+        <div class="section section-downloadappfooter">
+    
+            <p>中文(台灣) © 2024 from 111</p>
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <script>
         const tabButtons = document.querySelectorAll('.tab-button');
         const tabPanes = document.querySelectorAll('.tab-pane');
@@ -582,6 +1431,39 @@
 
                 // 為按鈕添加 active 類
                 button.classList.add('active');
+            });
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".mySwiper-eat", {
+            slidesPerView: 4,
+            spaceBetween: 20,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            }
+        });
+    </script>
+    <script>
+        const showModalBtn = document.querySelector('.showModal');
+        const messageDiv = document.querySelectorAll('.message');
+
+        messageDiv.forEach(messageDivElement => {
+            messageDivElement.addEventListener('click', () => {
+                const messageImg = messageDivElement.querySelector('img');
+                Swal.fire({
+                    html: `<div class="post"><img src="${messageImg.src}" alt="Selected Image" class="post-pic"><br><span class="post-text">You clicked the image!</span></div>`,
+                    showCloseButton: true,
+                    showCancelButton: false,
+                    focusConfirm: false,
+                    showconfirmButton: false,
+                    confirmButtonText: `<div class="post-icon"><span class="material-symbols-outlined">favorite</span></div>`,
+                    confirmButtonColor: 'transparent',
+                });
             });
         });
     </script>
