@@ -1,26 +1,19 @@
 
- const showModalBtn = document.getElementById('showModal');
-    const messageDiv = document.getElementById('message');
-    const messageImg = messageDiv.querySelector('img');
+        const showModalBtn = document.querySelector('.showModal');
+        const messageDiv = document.querySelectorAll('.message');
 
-    showModalBtn.addEventListener('click', () => {
-      Swal.fire({
-        title: 'Are you sure?',
-        text: 'This action cannot be undone.',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes, do it!',
-        cancelButtonText: 'No, cancel!',
-      });
-    });
-
-    messageDiv.addEventListener('click', () => {
-      Swal.fire({
-        html: `<img src="${messageImg.src}" alt="Selected Image" width="200"><br><span>You clicked the image!</span>`,
-        showCloseButton: true,
-        showCancelButton: false,
-        focusConfirm: false,
-        confirmButtonText: 'OK',
-        confirmButtonColor: 'transparent', // 設置確認按鈕背景為透明
-      });
-    });
+       messageDiv.forEach( messageDivElement => {
+             messageDivElement.addEventListener('click', () => {
+                const messageImg =  messageDivElement.querySelector('img');
+                Swal.fire({
+                    html: `<div class="post"><img src="${messageImg.src}" alt="Selected Image" class="post-pic"><br><span class="post-text">You clicked the image!</span></div>`,
+                    showCloseButton: true,
+                    showCancelButton: false,
+                    focusConfirm: false,
+                    showconfirmButton: false,
+                    confirmButtonText: `<div class="post-icon"><span class="material-symbols-outlined">favorite</span></div>`,
+                    confirmButtonColor: 'transparent',
+                });
+            });
+        });
+  
