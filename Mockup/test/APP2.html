@@ -34,7 +34,7 @@
         }
 
         .main-header .logo {
-            width: 95%;
+            width: 100%;
             z-index: 2;
             padding: 5px 0;
         }
@@ -168,13 +168,14 @@
         }
 
         main {
-            /* max-width: 1200px; */
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
         }
 
         @media screen and (min-width:768px) {
             main {
-                padding: 20vh 0 0 0;
+                padding: 12% 0 0 0;
             }
         }
 
@@ -209,12 +210,12 @@
         }
 
         .card-downloadapp {
-            padding:0 0 0 20px;
+            padding: 5vh 0 0 5vw;
         }
 
         @media screen and (min-width:768px) {
             .card-downloadapp {
-                padding: 0 0 0 50px;
+                padding: 20vh 0 0 8vw;
             }
         }
 
@@ -229,21 +230,30 @@
 
         /* app2 */
         .section-downloadappA {
-            padding: 10vh 0 5vh 0;
+            padding: 10vh 0 20vh 0;
         }
 
         .card-downloadappA {
-            padding: 0 0 0 50px;
+            padding: 5vh 5vw 0 0;
         }
-        @media screen and (max-width:768px) {
+
+        .card-downloadappA {
+            padding: 10vh 0 20vh 0;
+        }
+
+        @media screen and (min-width:768px) {
             .card-downloadappA {
-            padding: 0 0 0 10px;
-        }
+                padding: 20vh 5vw 0 2vw;
+            }
         }
 
         .card-downloadappB {}
 
-       
+        @media screen and (min-width:768px) {
+            .container-downloadappB .card-downloadapp {
+                padding: 10vh 5vw 0 8vw;
+            }
+        }
 
 
         .card-downloadappA h2 {
@@ -256,12 +266,12 @@
         }
 
         .card-appgroup {
-           padding: 10px;
+            padding: 5vh 0 0 5vw;
         }
 
-        @media screen and (max-width:768px) {
+        @media screen and (min-width:768px) {
             .card-appgroup {
-                padding: 20px;
+                padding: 5vh 0 0 8vw;
             }
         }
 
@@ -269,7 +279,8 @@
 
         .section-downloadappB {
             background-color: #FFF5EC;
-            padding: 10vh 0 ;
+            margin: -5%;
+            padding: 10vh 0;
         }
 
         .section-downloadappB .card-appb {
@@ -289,7 +300,7 @@
 
         /* app4 */
         .section-downloadappC {
-            padding: 10vh 20vh;
+            padding: 20vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -298,7 +309,7 @@
 
         @media screen and (max-width:768px) {
             .section-downloadappC {
-                padding: 50px 5px;
+                padding: 10vh;
             }
         }
 
@@ -317,14 +328,6 @@
         .section-downloadappfooter {
             padding: 20px 0;
             text-align: center;
-        }
-
-        /*  */
-        .container {
-                --gap: 0px;
-        }
-        .row{
-    align-items: center;
         }
     </style>
 </head>
