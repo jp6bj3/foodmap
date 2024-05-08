@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .shop-filters {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkbox-item {
+  margin-right: 16px;
+  margin-bottom: 8px;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.checkbox-item label {
+  font-size: 14px;
+  color: #555;
+}
+    </style>
+</head>
+<body>
+    <div class="shop-filters">
+        <div class="filter-group">
+            <h3>餐廳類型</h3>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="cafes" name="property-type">
+                    <label for="cafes">咖啡廳</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="dessert-shop" name="property-type">
+                    <label for="dessert-shop">甜點店</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="afternoon-tea" name="property-type">
+                    <label for="afternoon-tea">下午茶</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="cake shop" name="property-type">
+                    <label for="cake shop">蛋糕店</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="filter-group">
+            <h3>價格範圍</h3>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="price-1" name="price-range">
+                    <label for="price-1">$0 - $500</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="price-2" name="price-range">
+                    <label for="price-2">$500 - $1000</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="price-3" name="price-range">
+                    <label for="price-3">$1000 - $1500</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="price-4" name="price-range">
+                    <label for="price-4">$1500+</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="filter-group">
+            <h3>服務</h3>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="delivery" name="delivery">
+                    <label for="delivery">外送</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="internal-use" name="internal-use">
+                    <label for="internal-use">內用</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="order-online" name="order-online">
+                    <label for="order-online">線上訂購</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

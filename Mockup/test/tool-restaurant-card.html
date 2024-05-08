@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 卡片 */
+        .restaurant-card {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+      flex-wrap: wrap;
+      min-width: 320px;
+      margin: 10px 0;
+}
+
+.restaurant-image{
+  height: 200px;
+  object-fit: cover;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+    .restaurant-image{
+    width: 210px;
+ overflow:revert;}
+}
+
+.restaurant-image img {
+  width: 100%;
+  
+}
+
+.restaurant-info {
+  padding: 16px;
+}
+
+.restaurant-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.restaurant-address {
+  color: #666666;
+  margin-bottom: 4px;
+}
+
+.restaurant-visitors {
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+.restaurant-tags {
+  margin-bottom: 12px;
+}
+
+.tag {
+  background-color: #f0f0f0;
+  color: #666666;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+.restaurant-ratings {
+  display: flex;
+}
+
+.rating {
+  margin-right: 16px;
+}
+
+.rating-label {
+  color: #666666;
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.rating-value {
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.rating-count {
+  color: #666666;
+  font-size: 12px;
+}
+    </style>
+</head>
+<body>
+    <div class="s">
+    <div class="restaurant-card">
+        <div class="restaurant-image">
+            <img src="foodmap/img (16).jpg" alt="Instil Coffee">
+        </div>
+        <div class="restaurant-info">
+            <h2 class="restaurant-name">Instil Coffee</h2>
+            <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
+            <p class="restaurant-visitors">14,070人有過</p>
+            <div class="restaurant-tags">
+                <span class="tag">#中山區咖啡廳</span>
+                <span class="tag">#咖啡廳</span>
+                <span class="tag">#中山區Top10</span>
+            </div>
+            <div class="restaurant-ratings">
+                <div class="rating">
+                    <span class="rating-label">內用</span>
+                    <span class="rating-value">4.1</span>
+                    <span class="rating-count">23則評論</span>
+                </div>
+                <div class="rating">
+                    <span class="rating-label">外送</span>
+                    <span class="rating-value">4.5</span>
+                    <span class="rating-count">34則評論</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="restaurant-card">
+        <div class="restaurant-image">
+            <img src="foodmap/img (16).jpg" alt="Instil Coffee">
+        </div>
+        <div class="restaurant-info">
+            <h2 class="restaurant-name">Instil Coffee</h2>
+            <p class="restaurant-address">大安區, 九𥘚路898巷3-1號</p>
+            <p class="restaurant-visitors">14,070人有過</p>
+            <div class="restaurant-tags">
+                <span class="tag">#中山區咖啡廳</span>
+                <span class="tag">#咖啡廳</span>
+                <span class="tag">#中山區Top10</span>
+            </div>
+            <div class="restaurant-ratings">
+                <div class="rating">
+                    <span class="rating-label">內用</span>
+                    <span class="rating-value">4.1</span>
+                    <span class="rating-count">23則評論</span>
+                </div>
+                <div class="rating">
+                    <span class="rating-label">外送</span>
+                    <span class="rating-value">4.5</span>
+                    <span class="rating-count">34則評論</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
