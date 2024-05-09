@@ -483,6 +483,7 @@ padding: 0 20px 0 0;
         }
 
         .section-post .post-pic {
+            margin: 0 auto;
             width: 400px;
             /* height: 40vh; */
             border-radius: 20px;
@@ -507,11 +508,16 @@ padding: 0 20px 0 0;
 
         @media screen and (max-width:768px) {
             .section-post {
+                display: none;
+                width: 400px;
                 margin: auto;
             }
 
             .post-txt h2 {
                 padding-top: 20px;
+            }
+            .post-txt p{
+                font-size: 16px;
             }
 
             .post-txt .post-btn {
@@ -519,7 +525,7 @@ padding: 0 20px 0 0;
             }
 
             .section-post .post-pic {
-                width: 150%;
+                width: 100%;
             }
 
         }
@@ -755,6 +761,9 @@ padding: 0 20px 0 0;
                 text-align: center;
             }
         }
+.row-cols-2>.col {
+    margin: auto;
+}
 
     </style>
 </head>
